@@ -32,13 +32,17 @@ Front-end는 사실 javascript, jquery를 사용해본게 끝...
 
 ​			- **node_modules** : 프로젝트와 관련된 라이브러리가 설치되는 폴더
 
- 		   - **public** : index.html가 존재하는 폴더 , http://localhost:3000/ 로 어플리케이션이 작동되는 메인페이지
+​            - public : index.html가 존재하는 폴더 , http://localhost:3000/ 로 어플리케이션이 작동되는 메인페이지
 
-    		  - **src**  : react 앱 전체(global)에 적용되는 자바스크립트 파일과 css 파일
+​            - src  : react 앱 전체(global)에 적용되는 자바스크립트 파일과 css 파일
 
-​                    - **index.js** : 작성된 컴포넌트들을 모두 불러와서 결합시켜서 화면출력        
+​                        - App.js : root 컴포넌트, 모든 컴포넌트들을 결합시키는 부분(import, export 활용) ,  jsx 확장자 파일로 리턴                    
+
+​                        - index.js : 작성된 컴포넌트들을 모두 불러와서 결합시켜서 화면출력        
 
 ```js
+//index.js
+
 ReactDOM.render(<App />, document.getElementById('root'));     //App 이 컴포넌트, docu~ 가 부착위치입니다. id값을 가져왔습니다.
 
 // 최근엔 Render 내부에 <React.StrictMode> 라는 컴포넌트로 감싸서 출력합니다.
@@ -52,7 +56,7 @@ ReactDOM.render(
 );
 ```
 
-​                    - **App.js** : root 컴포넌트, 모든 컴포넌트들을 결합시키는 부분(import, export 활용) ,  jsx 확장자 파일로 리턴
+​                    
 
 ​                                    
 
@@ -97,11 +101,11 @@ class UserComponent extends Component{
 ```jsx
 class AddUserComponent extends Component{
     // ES6 class constructor는 subclasses가 있다면 무조건 super()를 불러야 합니다.
-    // ㅇ따라서 코드에 constructor가 있는 한 반드시 super()를 불러야 해요. (하지만 subclass는 constructor를 가지지 않아도 상관 없습니다.)
+    // 따라서 코드에 constructor가 있는 한 반드시 super()를 불러야 해요. (하지만 subclass는 constructor를 가지지 않아도 상관 없습니다.)
     constructor(props){					
-        super(props);			// super() 호출하지 않으면, this가 초기화 되지 않음.
-								// super() vs super(props) 
-                                // this.props에 접근하려면 super(props) 사용
+        super(props);			/* super() 호출하지 않으면, this가 초기화 되지 않음.
+								* super() vs super(props) 
+                                * this.props에 접근하려면 super(props) 사용 */
         this.state = {
             username : '',
             password : '',
