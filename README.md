@@ -66,32 +66,6 @@ ReactDOM.render(
 
 ​          
 
-```js
-// 함수형 컴포넌트 기본 구조 (하나의 함수만 사용하는 경우 단순하게 구성)
-import React from 'react';
-
-const UserComponent = (props) => {
-    return(
-        <div className="container">
-			컴포넌트 내용부분
-        </div>
-    );
-}
-
-// 클래스형 컴포넌트 기본 구조 ( 하나 이상 복잡하고 정교한 형태의 컴포넌트를 구성하기에 적합)
-import React, { Component } from 'react';
-
-class UserComponent extends Component{
-    render(){
-        return(
-            <div className="container">
-            	컴포넌트 내용 부분
-            </div>
-        );
-    }
-}
-```
-
 
 
 #### ✔️  React ES6
