@@ -17,7 +17,8 @@ import { composeWithDevTools } from 'redux-devtools-extension';
 *     
 * */ 
 const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
-//   const logger = createLogger();     // redux-logger 라이브러리도 설정가능 하지만, 개발자 도구를 더 많이 사용한다.
+//   const logger = createLogger();     
+// redux-logger 라이브러리도 설정가능 하지만, 개발자 도구를 더 많이 사용한다.
 
 /** 
  *     createStore() 메서드는 리듀서를 파라미터로 받으며 스토어를 생성

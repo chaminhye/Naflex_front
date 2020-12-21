@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
-import NetflixLogo from '../static/images/Netflix_Logo.png';
+import NetflixLogo from '../static/images/Naflex_Logo.png';
 import { FiSmile } from "react-icons/fi";
 import { FiSearch } from "react-icons/fi";
 import { FiBell } from "react-icons/fi";
 import { FiGift } from "react-icons/fi";
-import   from '../containers/SearchInpu5 =8 
+import SearchInput from '../containers/SearchInput';
 
 const Nav = () => {
 

@@ -6,6 +6,10 @@ import axios from 'axios';
  *      - 비동기 통신이 필요할 때는 redux-thunk 라이브러리나 react-saga 라이브러리를 사용한다.  
  */ 
 
+ /**
+ *    dispatch() 메서드를 파라미터로 받는 함수를 만들고, 응 기 통신을 적용할 수 있다.
+ */
+
 // action type 명령어
 export const FETCH_TRENDING = 'FETCH_TRENDING';
 export const FETCH_NETFLIX_ORIGINALS = 'FETCH_NETFLIX_ORIGINALS';
@@ -19,7 +23,8 @@ export const FETCH_DOCUMENTARIES = 'FETCH_DOCUMENTARIES';
 const API_KEY = '2ff32a0ae484b0000c3f1f4f2eb34392';
 const BASE_URL = `https://api.themoviedb.org/3`
 
-// action creators 메서드
+
+/* action creators 메서드*/
 export const fetchTrendData = (data) => {
   return {
       type: FETCH_TRENDING,
@@ -27,9 +32,6 @@ export const fetchTrendData = (data) => {
   }
 }
 
-/**
- *    dispatch() 메서드를 파라미터로 받는 함수를 만들고, 응 기 통신을 적용할 수 있다.
- */
 export const fetchTrending = () => {
   return (dispatch) => {
       return axios.get(`${BASE_URL}/trending/all/week?api_key=${API_KEY}&language=en-US`)
