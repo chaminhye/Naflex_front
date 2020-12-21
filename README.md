@@ -69,6 +69,6 @@ Redux를 사용할 때 브라우저의 이벤트를 받아 뷰를 바꾸는 과�
 4. 스토어에서 리듀서를 호출한다. 샘플 코드에서는 [todos 리듀서](https://github.com/naver/react-sample-code/tree/master/src/reducer/todos.js#L29-L40)를 호출한다.
 5. subscribe() 메서드로 등록한 리스너를 호출한다. 샘플 코드에서는 [render() 메서드](https://github.com/naver/react-sample-code/tree/master/src/index.js#L26)를 호출해 뷰를 갱신한다.
 
-![](/redux 작동과정.png)
+![](/reduxProcess.png)
 
 더 자세한 설명 -> <a href="https://www.evernote.com/l/AiD9pQt8cYRJYbuRsIV7BUqXQd8a0i0GrAM/">링크참조</a>
