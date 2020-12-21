@@ -1,0 +1,158 @@
+body {
+    background: white;
+}
+.navigation {
+    width: 100%;
+    position: fixed;
+    z-index: 100;
+    transition: all 0.5s ease-in;
+
+    &.black {
+        background: $color-background;
+    }
+
+    &_container {
+        margin-left: 3.8rem;
+        height: 4rem;
+        display: flex;
+        align-items: center;
+        position: relative;
+        transition: all 0.3s ease-in;
+    }
+
+    .logo {
+        height: 2.8rem;
+        margin: .5rem;
+        cursor: pointer;
+    }
+
+    .left {
+        margin: 0;
+        justify-content: flex-start;
+
+        
+
+        .link {
+            font-size: 12px;
+            font-weight: 500;
+            color: white;
+            cursor: pointer;
+
+            @include responsive(tab_port) {
+                display: none;
+            }
+    
+            &:hover {
+                color: $color-dark-grey;
+            }
+        }
+    }
+
+    .icons {
+        margin: 0 3.8rem 0 0;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        color: white;
+        position: absolute;
+        width: 30%;
+        right: 0;
+        cursor: pointer;
+
+        .search-box {
+            display: flex;
+            padding: 3px;
+            height: 20px;
+            align-items: center;
+            position: relative;
+        }
+
+        .link {
+            margin-left: 2rem;
+            
+            @include responsive(phone) {
+                display: none;
+            }
+
+            &:hover {
+                color: $color-dark-grey;
+            }
+        }
+    }
+}
+
+.searchContainer {
+    
+    .inputContainer {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        .searchLogo {
+            position: absolute;
+            left: 5%;
+            padding: 10px;
+            cursor: pointer;
+        }
+
+        .search-txt {
+            z-index: 1;
+            border: none;
+            color: #fff;
+            outline: none;
+            width: 0px;
+            padding: 10px;
+            padding-right: 2rem;
+            background: $color-background;
+            border: 1px solid #fff;
+            transition: all .5s;
+            cursor: pointer;
+            opacity: 0;
+
+            &:focus {
+                z-index: 0;
+                padding-left: 4rem;
+                width: 15rem;
+                cursor: text;
+                opacity: 1;
+            }
+        }
+    }
+
+    .searchMovie {
+        z-index: 100;
+        width: 100vw;
+        height: 86vh;
+        background: $color-background;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        display: none;
+
+        &.show {
+            display: block;
+        }
+
+        .listContainer {
+            width: 80vw;
+            height: 100%;
+            margin: auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            overflow: scroll;
+            
+
+            .lists {
+                img {
+                    height: 300px;
+                    z-index: 5;
+                    margin-bottom: 1rem;
+                }
+            }
+        }
+
+    }
+
+}
+

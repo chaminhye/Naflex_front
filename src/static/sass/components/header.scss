@@ -1,0 +1,74 @@
+header {
+    margin-bottom: 3%;
+
+    .headerContainer {
+        position: relative;
+
+        img {
+            width: 100%;
+        }
+
+        .headerContents {
+            position: absolute;
+            bottom: 10%;
+            left: 5%;
+            width: 60%;
+            height: 50%;
+            color: white;
+
+            @include responsive(tab_port) {
+                width: 80%;
+            }
+
+            h1 {
+                font-size: 2em;
+                font-weight: 600;
+            }
+
+            p {
+                margin-top: 2%;
+                width: 50%;
+
+                @include responsive(phone) {
+                    width: 200px;
+                    height: 50px;
+                    display: block;
+                    overflow: hidden;
+                    text-overflow: ellipsis;
+                    white-space:nowrap;
+                }
+            }
+
+            .btn {
+                margin-top: 3%;
+
+                button {
+                    padding: 1.5% 4%;
+                    margin-right: 2%;
+                    border: none;
+                    border-radius: 3%;
+                    background: $color-background;
+                    color: rgb(212, 212, 212);
+                    border-radius: 5%;
+                    transition: all 0.1s ease-in;
+                    cursor: pointer;
+    
+                    &:hover {
+                        transform: scale(1.1);
+                        color: white;
+                    }
+    
+                    &:first-child {
+                        background: $color-red;
+                    }
+    
+                    span {
+                        font-size: 12px;
+                        font-weight: 600;
+                        margin-left: 10px;
+                    }
+                }
+            }
+        }
+    }
+}

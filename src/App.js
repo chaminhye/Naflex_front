@@ -1,18 +1,21 @@
 import React from 'react';
-import AppRoute from './component/route/RouteComponent';
-import NavBar from './component/route/NavBar';
+import Nav from './components/Nav';
+import Layout from './containers/Layout';
+import Footer from './components/Footer';
+import Header from './components/Header';
 
-import Container from '@material-ui/core/Container';
-function App() {
+
+
+function App() {  
+
   return (
-    <div>
-      <NavBar/>
-      <Container>
-        <AppRoute/>
-      </Container>
+    <div className="App">
+      <Nav/>
+      <Header/>
+      <Layout/>
+      <Footer/>
     </div>
   );
 }
-
 
 export default App;

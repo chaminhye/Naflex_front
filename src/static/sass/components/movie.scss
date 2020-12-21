@@ -1,0 +1,125 @@
+.layout {
+    width: 90vw;
+    margin: auto;
+    background: $color-background;
+
+    p {
+        color: white;
+        font-size: 1em;
+        font-weight: 700;
+        text-transform: uppercase;
+        
+    }
+}
+
+.movieContainer {
+    margin: 2em 0;
+    height: 10rem;
+    padding: 15px;
+    align-items: center;
+    position: static;
+    display: flex;
+    overflow-y: hidden;
+
+    &::-webkit-scrollbar {
+        background: none;
+        border: 1px solid rgb(48, 48, 48); 
+    }
+    &::-webkit-scrollbar-thumb {
+        background: rgb(85, 85, 85);
+        border-radius: 30px;
+    }
+
+    &:hover .movie {
+        opacity: .3;
+    }
+
+    .movie {
+        background: black;
+        margin: 5px;
+        transition: all 0.2s ease-in;
+        display: inline-block;
+
+        &:hover {
+            opacity: 1;
+            z-index: 1;
+        }
+
+        img {
+            height: 8em;
+            cursor: pointer;
+            transition: all 0.2s ease-in;
+
+            @include responsive(tab_port) {
+                height: 6em;
+            }
+
+            @include responsive(phone) {
+                height: 13em;
+            }
+
+            &:hover {
+                height: 11em;
+
+                @include responsive(tab_port) {
+                    height: 9em;
+                }
+
+                @include responsive(phone) {
+                    height: 14em;
+                }
+            }
+        }
+    }
+
+    &:hover .netflixMovie {
+        opacity: .3;
+    }
+    
+}
+
+.netflixContainer {
+    margin: 2em 0;
+    padding: 15px;
+    align-items: center;
+    position: static;
+    display: flex;
+    overflow-y: hidden;
+
+    &::-webkit-scrollbar {
+        background: none;
+        border: 1px solid rgb(48, 48, 48); 
+    }
+    &::-webkit-scrollbar-thumb {
+        background: rgb(85, 85, 85);
+        border-radius: 30px;
+    }
+
+    &:hover .netflixMovie {
+        opacity: .3;
+    }
+
+    .netflixMovie {
+        margin-right: 1rem;
+        transition: all 0.2s ease-in;
+
+        &:hover {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+
+        img {
+            height: 27em;
+            cursor: pointer;
+            transition: all 0.2s ease-in;
+
+            @include responsive(tab_port) {
+                height: 20em;
+            }
+
+            @include responsive(phone) {
+                height: 33em;
+            }
+        }
+    }
+}
