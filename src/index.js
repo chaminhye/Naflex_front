@@ -5,7 +5,7 @@ import * as serviceWorker from './serviceWorker';
 import { createStore, applyMiddleware, compose } from 'redux';
 import thunk from 'redux-thunk';
 import { Provider } from 'react-redux';
-import rootReducer from './store/reducers';
+import rootReducer from './reducers';
 import './static/sass/style.scss';
 import { composeWithDevTools } from 'redux-devtools-extension';
 // import createLogger from 'redux-logger';  

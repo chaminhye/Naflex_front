@@ -1,14 +1,11 @@
 import axios from 'axios';
 /**
- *     src/store/action 폴더는 애플리케이션에서 사용하는 명령어와 api 통신과 같은 작업을 하는 액션메서드를 모아둔 폴더이다
+ *     src/action 폴더는 애플리케이션에서 사용하는 명령어와 api 통신과 같은 작업을 하는 액션메서드를 모아둔 폴더이다
  *      - 액션 메서드에서는 리듀서(reducer)로 데이터 생성을 요청한다. 
  *      - 비즈니스 로직을 주로 액션 메서드에 개발하기 때문에 액션 메서드는 컴포넌트의 재활용을 높이고 코드를 관리하는 데 중요한 역할을 한다.
  *      - 비동기 통신이 필요할 때는 redux-thunk 라이브러리나 react-saga 라이브러리를 사용한다.  
  */ 
 
- /**
- *    dispatch() 메서드를 파라미터로 받는 함수를 만들고, 응 기 통신을 적용할 수 있다.
- */
 
 // action type 명령어
 export const FETCH_TRENDING = 'FETCH_TRENDING';
@@ -32,6 +29,9 @@ export const fetchTrendData = (data) => {
   }
 }
 
+
+// dispatch() 메서드를 파라미터로 받는 함수를 만들고, 
+// 응답이 온 후 dispatch()메서드를 호출하면 정상적으로 비동기 통신을 적용할 수 있다.
 export const fetchTrending = () => {
   return (dispatch) => {
       return axios.get(`${BASE_URL}/trending/all/week?api_key=${API_KEY}&language=en-US`)

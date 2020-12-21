@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchActionMovies } from '../store/actions/index';
+import { fetchActionMovies } from '../actions/index';
 import Movie from '../components/Movie';
 /**
  *      Api연동은 Redux를 통해 관리하고,
@@ -16,8 +16,6 @@ const ActionContainer = (props) => {
 
     const actionData = useSelector(state => state.action.movies, []) || [];     // 컴포넌트 내에서 리덕스 스토어 상태에 접근 가능.
     // console.log(actionData.results);
-
-        
 
 
     return (

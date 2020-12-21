@@ -1,8 +1,8 @@
-import { FETCH_NETFLIX_ORIGINALS } from '../actions/index';
+import { FETCH_DOCUMENTARIES } from '../actions/index';
 
-export default function (state = [], action) {
+export default function reducerDocumentary(state = [], action) {
   switch (action.type) {
-      case FETCH_NETFLIX_ORIGINALS:
+      case FETCH_DOCUMENTARIES:
           return {
             ...state,
             movies: action.data,

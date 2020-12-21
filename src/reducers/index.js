@@ -10,9 +10,8 @@ import DocumentaryReducer from './reducerDocumentary';
 
 
 /**
- *      src/store/reducers 폴더는 리듀서로 구성된 폴더이다.
- *        - 리듀서는 액션메서드에서 변경한 상태를 받아 기존의 상태를 새로운 상태로 변경하는 일을 한다.
- *        - reducer폴더와 action폴더가 하나로 구성 가능(ducks 기법사용)  why? 분리하는 이유는 도메일별 구분하기 위해
+ *      src/reducers 폴더는 리듀서로 구성된 폴더이다.
+ *        - index.js : combineReducers을 통해 만든 루트리듀서 파일.
  */
 const rootReducer = combineReducers({
   trending: TrendingReducer,

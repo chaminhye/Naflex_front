@@ -1,8 +1,8 @@
-import { FETCH_DOCUMENTARIES } from '../actions/index';
+import { FETCH_TRENDING } from '../actions/index';
 
-export default function (state = [], action) {
+export default function reducerTrending(state = [], action) {
   switch (action.type) {
-      case FETCH_DOCUMENTARIES:
+      case FETCH_TRENDING:
           return {
             ...state,
             movies: action.data,

@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchHorrorMovies } from '../store/actions/index';
+import { fetchHorrorMovies } from '../actions/index';
 import Movie from '../components/Movie';
 
 const HorrorContainer = (props) => {

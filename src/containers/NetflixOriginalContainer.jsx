@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchNetflixOriginals } from '../store/actions/index';
+import { fetchNetflixOriginals } from '../actions/index';
 import NetflixMovie from '../components/NetflixMovie';
 
 const NetflixOriginalContainer = () => {

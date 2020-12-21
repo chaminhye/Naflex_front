@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchTopRated } from '../store/actions/index';
+import { fetchTopRated } from '../actions/index';
 import Movie from '../components/Movie';
 
 

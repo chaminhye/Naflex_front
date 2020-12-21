@@ -1,8 +1,8 @@
-import { FETCH_ROMANCE_MOVIES } from '../actions/index';
+import { FETCH_HORROR_MOVIES } from '../actions/index';
 
-export default function (state = [], action) {
+export default function reducerHorrorMovies(state = [], action) {
   switch (action.type) {
-      case FETCH_ROMANCE_MOVIES:
+      case FETCH_HORROR_MOVIES:
           return {
             ...state,
             movies: action.data,

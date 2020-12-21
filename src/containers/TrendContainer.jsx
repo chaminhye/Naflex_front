@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchTrending } from '../store/actions/index';
+import { fetchTrending } from '../actions/index';
 import Movie from '../components/Movie';
 
 const TrendContainer = (props) => {

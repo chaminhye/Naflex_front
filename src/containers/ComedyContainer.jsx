@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchComedyMovies } from '../store/actions/index';
+import { fetchComedyMovies } from '../actions/index';
 import Movie from '../components/Movie';
 
 const ComedyContainer = (props) => {
