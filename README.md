@@ -28,6 +28,7 @@
 
   * reducers  -> 리듀서들로 구성된 폴더(combineReducers를 이용하여 루트리듀서 생성)
 
+
   * components  -> 리액트 컴포넌트로 구성된 폴더(presentational, container)
 
   * containers ->  data를 가져오는 액션을 디스패치, 각 컴포넌트에 해당 영화 정보를 props를 통해 전달
