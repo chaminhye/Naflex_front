@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import NetflixLogo from '../static/images/Naflex_Logo.png';
-import { FiBell, FiGift, FiSmile, FiSearch , FiLogIn} from "react-icons/fi";
-import SearchInput from '../containers/SearchInput';
-import {Link, Route, BrowserRouter as Router, Switch} from 'react-router-dom';
-import LoginForm from './LoginForm';
+import { FiBell, FiGift, FiLogIn, FiSmile } from "react-icons/fi";
+import { Link } from 'react-router-dom';
+import SearchInput from '../../containers/SearchInput';
+import NetflixLogo from '../../static/images/Naflex_Logo.png';
 
 /**
  *      /src/component 폴더는 React 컴포넌트로 구성된 폴더, 컴포넌트를 보통 도메인별로 구분
@@ -28,11 +27,11 @@ const Nav = () => {
     window.addEventListener('scroll', handleScroll);
 
     return (
-        <Router>
+        <>
             <nav className={"navigation " + (scrolling ? "black" : "" )}>
                 <ul className="navigation_container">
                     <div className="navigation_container left">
-                        <img className="navigation_container logo" src={NetflixLogo} alt="logo" />
+                        <Link to="/"><img className="navigation_container logo" src={NetflixLogo} alt="logo" /></Link>
                         <Link to="/"><div className="navigation_container link">Home</div></Link>
                         <Link to="/tvShow"><div className="navigation_container link">TV Shows</div></Link>
                         <Link to="/movies"><div className="navigation_container link">Movies</div></Link>
@@ -47,15 +46,11 @@ const Nav = () => {
                         <div className="navigation_container link"><FiGift/></div>
                         <div className="navigation_container link"><FiBell/></div>
                         <div className="navigation_container link"><FiSmile/></div>
-                        <div className="navigation_container link"><Link to="/login"/><FiLogIn/></div>
+                        <Link to="/login"><div className="navigation_container link"><FiLogIn/></div></Link>
                     </div>
                 </ul>
             </nav>
-            <Switch>
-                <Route path="/" exact={true}/>
-                <Route path="/login" component={LoginForm}/>
-            </Switch>
-        </Router>
+        </>
     );
 }
 

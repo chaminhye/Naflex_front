@@ -1,0 +1,72 @@
+.login{
+    text-align : center;
+    padding-top: 4rem;
+    font-weight: 500;
+    height: 100vh;
+
+    h1 {
+        color: #fff;
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 28px;
+        padding-top: 55px;
+    }
+
+    p{
+        color: #737373;
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 16px;
+    }
+
+    &__wrapper{
+        color: white;
+        font-size: 1.5em;
+        margin-top: 4rem;
+        border: 1px solid #000000;
+        margin-right: 40rem;
+        margin-left: 40rem;
+        margin-bottom: auto;
+        background: $color-background;
+        height: 30rem;
+    }
+
+    &__input {
+        z-index: 0;
+        border: none;
+        color: #fff;
+        outline: none;
+        padding: 10px;
+        margin-left: 1rem;
+        background: $color-background;
+        border: 1px solid #fff;
+        transition: all .5s;
+        cursor: text;
+        opacity: 1;
+        width: 13rem;
+
+    }
+
+    &__submit{
+        width: 17.5rem;
+        background: #e50914;
+        font-size: 16px;
+        padding-top: 15px;
+        margin-top: 15px;
+        font-weight: bolder;
+        text-align: center;
+    }
+
+    &__rememberMe {
+        color: #b3b3b3;
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    &__signup{
+        color: #737373;
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 16px;
+    }
+}

@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { FiSearch } from "react-icons/fi";
-import Modal from '../components/Modal';
+import Modal from '../components/movies/Modal';
 
 //https://www.themoviedb.org/talk/5c89de1ec3a368645d0cce67 genre 참조
 //https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&language=en-US&page=1&primary_release_year=2019&with_genres=28

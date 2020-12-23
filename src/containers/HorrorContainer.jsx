@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchHorrorMovies } from '../actions/index';
-import Movie from '../components/Movie';
+import Movie from '../components/movies/Movie';
 
 const HorrorContainer = (props) => {
 
