@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
 import NetflixLogo from '../static/images/Naflex_Logo.png';
-import { FiSmile } from "react-icons/fi";
-import { FiSearch } from "react-icons/fi";
-import { FiBell } from "react-icons/fi";
-import { FiGift } from "react-icons/fi";
+import { FiBell, FiGift, FiSmile, FiSearch , FiLogIn} from "react-icons/fi";
 import SearchInput from '../containers/SearchInput';
+import {Link, Route, BrowserRouter as Router, Switch} from 'react-router-dom';
+import LoginForm from './LoginForm';
 
 /**
  *      /src/component 폴더는 React 컴포넌트로 구성된 폴더, 컴포넌트를 보통 도메인별로 구분
@@ -29,28 +28,34 @@ const Nav = () => {
     window.addEventListener('scroll', handleScroll);
 
     return (
-        <nav className={"navigation " + (scrolling ? "black" : "" )}>
-            <ul className="navigation_container">
-                <div className="navigation_container left">
-                    <img className="navigation_container logo" src={NetflixLogo} alt="logo" />
-                    <div className="navigation_container link">Home</div>
-                    <div className="navigation_container link">TV Shows</div>
-                    <div className="navigation_container link">Movies</div>
-                    <div className="navigation_container link">Recently</div>
-                    <div className="navigation_container link">My List</div>
-                </div>
-                <div className="icons">
-                    <div className="search-box">
-                        <SearchInput/>
-                        {/* <input onChange={onChange} value={value} className="search-txt" type="text" placeholder=" Title "/> */}
+        <Router>
+            <nav className={"navigation " + (scrolling ? "black" : "" )}>
+                <ul className="navigation_container">
+                    <div className="navigation_container left">
+                        <img className="navigation_container logo" src={NetflixLogo} alt="logo" />
+                        <Link to="/"><div className="navigation_container link">Home</div></Link>
+                        <Link to="/tvShow"><div className="navigation_container link">TV Shows</div></Link>
+                        <Link to="/movies"><div className="navigation_container link">Movies</div></Link>
+                        <Link to="/recently"><div className="navigation_container link">Recently</div></Link>
+                        <Link to="/myList"><div className="navigation_container link">My List</div></Link>
                     </div>
-                    <div className="navigation_container link"><FiGift/></div>
-                    <div className="navigation_container link"><FiBell/></div>
-                    <div className="navigation_container link"><FiSmile/></div>
-                </div>
-
-            </ul>
-        </nav>
+                    <div className="icons">
+                        <div className="search-box">
+                            <SearchInput/>
+                            {/* <input onChange={onChange} value={value} className="search-txt" type="text" placeholder=" Title "/> */}
+                        </div>
+                        <div className="navigation_container link"><FiGift/></div>
+                        <div className="navigation_container link"><FiBell/></div>
+                        <div className="navigation_container link"><FiSmile/></div>
+                        <div className="navigation_container link"><Link to="/login"/><FiLogIn/></div>
+                    </div>
+                </ul>
+            </nav>
+            <Switch>
+                <Route path="/" exact={true}/>
+                <Route path="/login" component={LoginForm}/>
+            </Switch>
+        </Router>
     );
 }
 

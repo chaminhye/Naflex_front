@@ -8,6 +8,7 @@ import { Provider } from 'react-redux';
 import rootReducer from './reducers';
 import './static/sass/style.scss';
 import { composeWithDevTools } from 'redux-devtools-extension';
+import { BrowserRouter } from 'react-router-dom';
 // import createLogger from 'redux-logger';  
 /*
 *     index.js파일, 주로 미들웨어를 설정
@@ -27,7 +28,11 @@ const composeEnhancer = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
 
 ReactDOM.render(
-    <Provider store={store}><App /></Provider>,     // 스토어는 Provider 객체를 사용해 하위 컴포넌트에 스토어를 전달한다
+    <BrowserRouter>
+        <Provider store={store}>
+            <App />
+        </Provider>
+    </BrowserRouter>,     // 스토어는 Provider 객체를 사용해 하위 컴포넌트에 스토어를 전달한다
     document.getElementById('root')
 );
 
