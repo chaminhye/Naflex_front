@@ -1,16 +1,11 @@
 import React, { useState } from 'react';
 import { FiKey, FiLogIn, FiMail } from 'react-icons/fi';
 import AuthenticationService from '../../utils/AuthenticationService';
-import backgroundImg from '../../static/images/login_bg.jpg';
 import  { useHistory} from 'react-router'; 
 
 function LoginComponent(){
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-
-    const style = {
-        backgroundImage: `url(${backgroundImg})`
-      };
 
     const history = useHistory();
 
@@ -23,7 +18,7 @@ function LoginComponent(){
         .executeJwtAuthenticationService(data)
         .then((response) => {
             AuthenticationService.registerSuccessfulLoginForJwt(username,response.data.jwttoken)
-            history.push(`/`)
+            history.push(`/home`)
         }).catch( () =>{
             console.log({showSuccessMessage:false})
             console.log({hasLoginFailed:true})

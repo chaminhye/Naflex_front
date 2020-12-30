@@ -1,17 +1,17 @@
 import axios from 'axios';
-
+import {BASE_URL} from '../constants';
 class AuthenticationService {
     // send username, password to the SERVER
     executeJwtAuthenticationService(data) {
         const headers ={
             'Content-Type': 'application/json',
         };
-        return axios.post('http://localhost:8080/authenticate', data, headers)
+        return axios.post(`${BASE_URL}/authenticate`, data, headers)
     }
 
     executeHelloService() {
         console.log("===executeHelloService===")
-        return axios.get('http://localhost:8080/hello');
+        return axios.get(`${BASE_URL}/hello`);
     }
 
     registerSuccessfulLoginForJwt(username, token) {
