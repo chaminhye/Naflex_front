@@ -9,6 +9,8 @@ import rootReducer from './reducers';
 import './static/sass/style.scss';
 import { composeWithDevTools } from 'redux-devtools-extension';
 import { BrowserRouter } from 'react-router-dom';
+import axios from 'axios';
+
 // import createLogger from 'redux-logger';  
 /*
 *     index.js파일, 주로 미들웨어를 설정

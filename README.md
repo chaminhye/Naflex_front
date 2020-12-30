@@ -18,6 +18,7 @@
 
 * Sass
 
+* http-proxy-middleware (CORS)
   
 
 #### 📂Project structure
