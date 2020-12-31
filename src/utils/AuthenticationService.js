@@ -1,6 +1,14 @@
 import axios from 'axios';
 import {BASE_URL} from '../constants';
+
 class AuthenticationService {
+    // send username to the SERVER
+    checkJwtAuthenticationService(data) {
+        const headers ={
+            'Content-Type': 'application/json',
+        };
+        return axios.post(`${BASE_URL}/authenticate/check`, data, headers)
+    }
     // send username, password to the SERVER
     executeJwtAuthenticationService(data) {
         const headers ={

@@ -1,7 +1,26 @@
 import React, { useState } from 'react';
+import  { useHistory} from 'react-router'; 
+import AuthenticationService from '../../utils/AuthenticationService';
 
-const Home = () => {
-    const [email, setEmail] = useState('');
+function Home () {
+    const [username, setUsername] = useState('');
+    const history = useHistory();
+
+    const startClicked = (username) =>{
+        const data = {email : username};
+
+        AuthenticationService
+        .checkJwtAuthenticationService(data)
+        .then((response) => {
+            // 이메일이 존재하는 경우
+            // 신규 회원인 경우
+            history.push(`/home`);
+        }).catch( () => {
+            console.log({showSuccessMessage:false})
+            console.log({checkUserFailed:true})
+        });
+    }
+
     return(
         <div>
             <div className="home">
@@ -12,9 +31,9 @@ const Home = () => {
                         <h2>다양한 디바이스에서 시청하세요. 언제든 해지하실 수 있습니다.</h2>
                         <h3>시청할 준비가 되셨나요? 멤버십을 등록하거나 재시작하려면 이메일 주소를 입력하세요.</h3>
                         <div className="home__input">
-                            <input type="email" name="email" maxLength="50" id="email" className="home__input--text"></input>
+                            <input type="email" maxLength="50" onChange={({ target: { value } }) => setUsername(value)} value={username} className="home__input--text"></input>
 
-                            <button className="btn--red">
+                            <button className="btn--red" onClick={() => startClicked(username)}>
                                 <span className="btn--txt">시작하기 </span>
                             </button>
                         </div>

@@ -26,6 +26,9 @@ const Nav = () => {
     
     window.addEventListener('scroll', handleScroll);
 
+    // token에 따라 Nav상단 메뉴 display 설정
+    const token = localStorage.getItem('token');
+    
     return (
         <>
             <nav className={"navigation " + (scrolling ? "black" : "" )}>
@@ -33,6 +36,7 @@ const Nav = () => {
                     <div className="navigation_container left">
                         <Link to="/"><img className="navigation_container logo" src={NetflixLogo} alt="logo" /></Link>
                         <Link to="/"><div className="navigation_container link">Home</div></Link>
+                        
                         <Link to="/tvShow"><div className="navigation_container link">TV Shows</div></Link>
                         <Link to="/movies"><div className="navigation_container link">Movies</div></Link>
                         <Link to="/recently"><div className="navigation_container link">Recently</div></Link>
