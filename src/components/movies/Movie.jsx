@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import Modal from './Modal';
-
 const Movie = (props) => {
 
     const [modal, setModal] = useState(false);
