@@ -42,6 +42,7 @@ class AuthenticationService {
             config => {
                 console.log("===setupAxiosInterceptors_request===");
                 const token = localStorage.getItem('token');
+                // API 요청하는 콜마다 헤더에 accessToken 담아 보내도록 설정
                 if (token) {
                     config.headers['Authorization'] = 'Bearer ' + token;
                 }

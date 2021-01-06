@@ -40,3 +40,6 @@ ReactDOM.render(
 
 serviceWorker.unregister();
 
+// refreshToken cookie를 주고받기 위한 설정(withCredentails = true)
+// axios.defaults.baseURL="http://localhost:8080";
+// axios.defaults.withCredentials= true;
