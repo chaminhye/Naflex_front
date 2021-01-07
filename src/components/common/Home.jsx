@@ -1,25 +1,8 @@
+import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
-import  { useHistory} from 'react-router'; 
-import AuthenticationService from '../../utils/AuthenticationService';
 
 function Home () {
     const [username, setUsername] = useState('');
-    const history = useHistory();
-
-    const startClicked = (username) =>{
-        const data = {email : username};
-
-        AuthenticationService
-        .checkJwtAuthenticationService(data)
-        .then((response) => {
-            // 이메일이 존재하는 경우
-            // 신규 회원인 경우
-            history.push(`/home`);
-        }).catch( () => {
-            console.log({showSuccessMessage:false})
-            console.log({checkUserFailed:true})
-        });
-    }
 
     return(
         <div>
@@ -33,9 +16,11 @@ function Home () {
                         <div className="home__input">
                             <input type="email" maxLength="50" onChange={({ target: { value } }) => setUsername(value)} value={username} className="home__input--text"></input>
 
-                            <button className="btn--red" onClick={() => startClicked(username)}>
+                            <Link to="/signUp">
+                            <button className="btn--red">
                                 <span className="btn--txt">시작하기 </span>
                             </button>
+                            </Link>
                         </div>
                     </div>
 

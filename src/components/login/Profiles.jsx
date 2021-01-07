@@ -1,6 +1,6 @@
 import React from 'react';
 
-function ProfilesComponent(){
+function Profiles(){
 
 return(
 <div>
@@ -38,4 +38,4 @@ return(
 )
 }
 
-export default ProfilesComponent;
+export default Profiles;
