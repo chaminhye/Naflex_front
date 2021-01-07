@@ -1,0 +1,88 @@
+.login{
+    text-align : center;
+    padding-top: $top-header-padding;
+    font-weight: 500;
+    height: 100vh;
+    display: flex;
+    background-image: url('/static/images/login_bg.jpg');
+
+    @include responsive(tab_port) {
+        width: 100%;
+    }
+
+    h1 {
+        color: #fff;
+        font-size: 32px;
+        font-weight: 700;
+        margin-bottom: 28px;
+        padding-top: 55px;
+    }
+
+    p{
+        color: #737373;
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 16px;
+    }
+
+    &__wrapper{
+        color: white;
+        font-size: 1.5em;
+        margin-top: 4rem;
+        border: 1px solid #000000;
+        margin-left: 700px;
+        margin-bottom: auto;
+        background: $color-background;
+        height: 30rem;
+        width: 25rem;
+
+        @include responsive(tab_port) {
+            margin-right: 20rem;
+            margin-left: 20rem;
+        }
+
+        @include responsive(phone) {
+            margin-right: 10rem;
+            margin-left: 10rem;
+        }
+    }
+
+    &__input {
+        z-index: 0;
+        border: none;
+        color: #fff;
+        outline: none;
+        padding: 10px;
+        margin-left: 1rem;
+        background: $color-background;
+        border: 1px solid #fff;
+        transition: all .5s;
+        cursor: text;
+        opacity: 1;
+        width: 13rem;
+        padding: 10px 15px 10px 10px;
+    }
+
+    &__submit{
+        width: 17.5rem;
+        background: #e50914;
+        font-size: 16px;
+        padding: 10px 0px;
+        margin-top: 30px;
+        font-weight: bolder;
+        text-align: center;
+    }
+
+    &__rememberMe {
+        color: #b3b3b3;
+        font-size: 13px;
+        font-weight: 500;
+    }
+
+    &__signup{
+        color: #737373;
+        font-size: 16px;
+        font-weight: 500;
+        margin-top: 16px;
+    }
+}

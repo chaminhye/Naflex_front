@@ -1,19 +1,14 @@
 import React from 'react';
-import Nav from './components/Nav';
-import Layout from './containers/Layout';
-import Footer from './components/Footer';
-import Header from './components/Header';
-
-
+import MainRoute from './pages/MainRoute';
+import { BrowserRouter } from 'react-router-dom';
 
 function App() {  
 
   return (
     <div className="App">
-      <Nav/>
-      <Header/>
-      <Layout/>
-      <Footer/>
+      <BrowserRouter>
+        <MainRoute/>
+      </BrowserRouter>
     </div>
   );
 }

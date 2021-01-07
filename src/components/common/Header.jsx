@@ -2,7 +2,7 @@ import React from 'react';
 import { FiPlay } from 'react-icons/fi';
 import { FiPlus } from 'react-icons/fi';
 import { FiInfo } from 'react-icons/fi';
-import backgroundImg from '../static/images/header.jpg';
+import backgroundImg from '../../static/images/header.jpg';
 
 const Header = () => {
 

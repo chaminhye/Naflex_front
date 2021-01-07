@@ -18,6 +18,7 @@
 
 * Sass
 
+* http-proxy-middleware (CORS)
   
 
 #### 📂Project structure
@@ -40,6 +41,9 @@
 #### ✔ Technology to apply ( ~예정)
 
 * 로그인(다중 이용자) 
+  * 회원가입(이메일을 key 값으로 사용)
+  * 로그인 여부에 따른 기능 구분필요
+  * 다중 사용자 선택 기능
 * 플레이어
 * 결제기능
 

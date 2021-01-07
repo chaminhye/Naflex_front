@@ -1,24 +1,23 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchTrending } from '../actions/index';
+import { fetchDocumentaries } from '../../actions/index';
 import Movie from '../components/Movie';
 
-const TrendContainer = (props) => {
+const DocumentaryContainer = (props) => {
 
     const dispatch = useDispatch();
 
         useEffect(() => {
-            dispatch(fetchTrending());
+            dispatch(fetchDocumentaries());
         }, []);
 
-        const TrendData = useSelector(state => state.trending.movies, []) || [];
-
+        const documentaryData = useSelector(state => state.documentary.movies, []) || [];
 
     return (
         <div>
-            <p>Trend Movies</p>  
+            <p>Documentary Movies</p>
             <div className="movieContainer">
-                { TrendData.results && TrendData.results.map(movie => (
+                { documentaryData.results && documentaryData.results.map(movie => (
                     <Movie props={movie} key={movie.id}/>
                 ))}
             </div>
@@ -26,4 +25,4 @@ const TrendContainer = (props) => {
     )
 }
 
-export default TrendContainer;
+export default DocumentaryContainer;

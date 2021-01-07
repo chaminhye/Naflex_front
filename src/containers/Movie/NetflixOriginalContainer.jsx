@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchNetflixOriginals } from '../actions/index';
-import NetflixMovie from '../components/NetflixMovie';
+import { fetchNetflixOriginals } from '../../actions/index';
+import NetflixMovie from '../../components/movies/NetflixMovie';
 
 const NetflixOriginalContainer = () => {
 
