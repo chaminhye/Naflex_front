@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchDocumentaries } from '../actions/index';
+import { fetchDocumentaries } from '../../actions/index';
 import Movie from '../components/Movie';
 
 const DocumentaryContainer = (props) => {

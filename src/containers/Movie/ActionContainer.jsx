@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchActionMovies } from '../actions/index';
-import Movie from '../components/movies/Movie';
+import { fetchActionMovies } from '../../actions/index';
+import Movie from '../../components/movies/Movie';
 /**
  *      Api연동은 Redux를 통해 관리하고,
  *      Data를 가져오는 액션을 디스패치해 Movie컴포넌트에 해당 영화 정보를 props를 통해 전달해줬다. 
