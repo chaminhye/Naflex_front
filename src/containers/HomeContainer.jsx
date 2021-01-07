@@ -1,8 +1,8 @@
 import React from 'react';
-import Nav from './Nav';
-import Header from './Header';
-import Layout from '../../containers/Layout';
-import Footer from './Footer';
+import Nav from '../components/common/Nav';
+import Header from '../components/common/Header';
+import Layout from './Layout';
+import Footer from '../components/common/Footer';
 
 // 로그인 후 화면
 export default function HomeContainer(){

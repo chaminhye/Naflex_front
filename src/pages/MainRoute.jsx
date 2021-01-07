@@ -1,11 +1,10 @@
 import React from 'react';
 import { Switch,Route } from 'react-router-dom';
-import MainContainer from '../components/common/MainContainer';
-import HomeContainer from '../components/common/HomeContainer';
-import LoginContainer from '../components/login/LoginContainer';
 import ProfilesContainer from '../components/login/ProfilesContainer';
 import Player from '../components/movies/Player';
-
+import MainContainer from '../containers/MainContainer';
+import HomeContainer from '../containers/HomeContainer';
+import LoginContainer from '../containers/LoginContainer';
 
 export default function MainRoute(){
     return (
