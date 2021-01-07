@@ -32,15 +32,16 @@ const Nav = (props) => {
     //               > home >> 전체 다 노출     
 
     const isLogin = localStorage.getItem('token');
-
-    console.log('isLogin',isLogin);
+    const currentUrl = window.location.href.includes('/home/') ;
+    console.log(currentUrl);
+    
     return (
         <>
             <nav className={"navigation " + (scrolling ? "black" : "" )}>
                 <ul className="navigation_container">
                     <div className="navigation_container left">
                         <Link to="/"><img className="navigation_container logo" src={NetflixLogo} alt="logo" /></Link>
-                        {isLogin ?
+                        {isLogin && currentUrl ?
                             <>
                             <Link to="/tvShow" className="no--line--link"><div className="navigation_container link">홈</div></Link>
                             <Link to="/tvShow" className="no--line--link"><div className="navigation_container link">TV 프로그램</div></Link>
@@ -51,7 +52,7 @@ const Nav = (props) => {
                          : null}
                     </div>
                     <div className="icons">
-                        {isLogin ?
+                        {isLogin && currentUrl  ?
                             <>
                             <div className="search-box">
                                 <SearchInput/>
@@ -60,9 +61,12 @@ const Nav = (props) => {
                             <div className="navigation_container link"><FiGift/></div>
                             <div className="navigation_container link"><FiBell/></div>
                             <div className="navigation_container link"><FiSmile/></div>
+                            <Link to="/logout" className="no--line--link "><div className="navigation_container link loginButton">로그아웃</div></Link>
                             </>
                         : null}
-                        <Link to="/login" className="no--line--link "><div className="navigation_container link loginButton">로그인</div></Link>
+                        {!isLogin &&
+                            <Link to="/login" className="no--line--link "><div className="navigation_container link loginButton">로그인</div></Link>
+                        }
                     </div>
                 </ul>
             </nav>
