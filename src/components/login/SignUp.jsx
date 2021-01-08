@@ -14,9 +14,8 @@ function SignUp(){
         AuthenticationService
         .signup(data)
         .then((response) => {
-            // 이메일이 존재하는 경우
-            // 신규 회원인 경우
-            history.push(`/home`);
+            // 신규 회원인 경우, 결제페이지로 이동
+            history.push(`/credentials`);
         }).catch( () => {
             console.log({showSuccessMessage:false})
             console.log({checkUserFailed:true})
@@ -28,6 +27,7 @@ function SignUp(){
             <div className="signup">
                 <div className="signup__container">
                     <div>
+                        1/2단계
                         <h2>비밀번호를 설정하고 멤버십을 시작하세요</h2>
 
                         <input className="input" 

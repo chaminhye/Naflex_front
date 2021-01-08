@@ -6,6 +6,7 @@ import MainContainer from '../containers/MainContainer';
 import HomeContainer from '../containers/HomeContainer';
 import LoginContainer from '../containers/LoginContainer';
 import SignUpContainer from '../containers/SignUpContainer';
+import CredentialContainer from '../containers/CredentialContainer';
 
 export default function MainRoute(){
     return (
@@ -16,6 +17,7 @@ export default function MainRoute(){
             <Route path="/login" component={LoginContainer}/>
             <Route path="/signUp" component={SignUpContainer}/>
             <Route path="/player" component={Player}/>
+            <Route path="/credentials" component={CredentialContainer}/>
         </Switch>
     )
 }
