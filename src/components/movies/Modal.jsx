@@ -2,6 +2,8 @@ import React from 'react';
 import { FiPlay } from 'react-icons/fi';
 import { FiPlus } from 'react-icons/fi';
 import { FiInfo } from 'react-icons/fi';
+import Player from './Player';
+import { Link } from 'react-router-dom';
 
 const Modal = ({ name, overview, img, show, containerName, onClick}) => {
 
@@ -15,7 +17,7 @@ const Modal = ({ name, overview, img, show, containerName, onClick}) => {
                     <h1>{name}</h1>
                     <p>{overview}</p>
                     <div className="btn">
-                        <button><FiPlay/><span>PLAY</span></button>
+                        <Link to="/player"><button><FiPlay/><span>PLAY</span></button></Link>
                         <button><FiPlus/><span>MY LIST</span></button>
                         <button><FiInfo/><span>DETAILS</span></button>
                     </div>

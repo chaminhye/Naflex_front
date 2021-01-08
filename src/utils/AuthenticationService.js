@@ -3,11 +3,11 @@ import {BASE_URL} from '../constants';
 
 class AuthenticationService {
     // send username to the SERVER
-    checkJwtAuthenticationService(data) {
+    signup(data) {
         const headers ={
             'Content-Type': 'application/json',
         };
-        return axios.post(`${BASE_URL}/authenticate/check`, data, headers)
+        return axios.post(`${BASE_URL}/api/saveMember`, data, headers)
     }
     // send username, password to the SERVER
     executeJwtAuthenticationService(data) {

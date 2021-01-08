@@ -12,12 +12,27 @@ body {
     }
 
     &_container {
-        margin-left: 3.8rem;
-        height: 4rem;
+        margin-left: 2.5rem;
+        height: 5rem;
         display: flex;
         align-items: center;
         position: relative;
         transition: all 0.3s ease-in;
+
+        .loginButton {
+            background-color: #e50914;
+            line-height: normal;
+            padding: 7px 17px;
+            font-weight: 400;
+            font-size: 1rem;
+            float: right;
+            color: #fff;
+            -webkit-border-radius: 3px;
+            -moz-border-radius: 3px;
+            border-radius: 3px;
+            margin-top: -0.5rem;
+            height: fit-content;
+        }
     }
 
     .logo {
@@ -33,7 +48,7 @@ body {
         
 
         .link {
-            font-size: 12px;
+            font-size: 16px;
             font-weight: 500;
             color: white;
             cursor: pointer;
@@ -69,15 +84,18 @@ body {
 
         .link {
             margin-left: 2rem;
-            
+
             @include responsive(phone) {
                 display: none;
             }
 
-            &:hover {
+            &:hover,&:after {
                 color: $color-dark-grey;
             }
         }
+    }
+    .no--line--link{
+        text-decoration: none;
     }
 }
 

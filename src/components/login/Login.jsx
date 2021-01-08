@@ -3,7 +3,7 @@ import { FiKey, FiLogIn, FiMail } from 'react-icons/fi';
 import AuthenticationService from '../../utils/AuthenticationService';
 import  { useHistory} from 'react-router'; 
 
-function LoginComponent(){
+function Login(){
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
@@ -63,4 +63,4 @@ function LoginComponent(){
 
 }
 
-export default LoginComponent;
+export default Login;

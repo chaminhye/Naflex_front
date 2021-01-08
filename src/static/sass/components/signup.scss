@@ -1,0 +1,50 @@
+.signup{
+    background-color: white;
+    height: 100vh;
+    padding-top: 9.5rem;
+    text-align: center;
+    padding: 15rem 7.5rem 0 6rem;
+
+    &__container{
+        h2 {
+            color: #000;
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 28px;
+            padding-top: 55px;
+        }
+    
+        p{
+            color: #000;
+            font-size: 16px;
+            font-weight: 500;
+            margin-top: 16px;
+        }
+    
+        .input {
+            z-index: 0;
+            border: none;
+            color: #000;
+            outline: none;
+            padding: 10px;
+            margin-left: 1rem;
+            background: white;
+            border: 1px solid #000;
+            transition: all .5s;
+            cursor: text;
+            opacity: 1;
+            width: 13rem;
+            padding: 10px 15px 10px 10px;
+        }
+    
+        .submit{
+            width: 17.5rem;
+            background: #e50914;
+            font-size: 16px;
+            padding: 10px 0px;
+            margin-top: 30px;
+            font-weight: bolder;
+            text-align: center;
+        }
+    }
+}
