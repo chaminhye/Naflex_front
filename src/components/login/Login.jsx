@@ -18,7 +18,9 @@ function Login(){
         .executeJwtAuthenticationService(data)
         .then((response) => {
             AuthenticationService.registerSuccessfulLoginForJwt(username,response.data.jwttoken)
-            history.push(`/home`)
+            // [TODO] member이름으로 username
+            // profile 구해오는 axios 구현되어야 함.
+            history.push(`/profile/`+username)
         }).catch( () =>{
             console.log({showSuccessMessage:false})
             console.log({hasLoginFailed:true})
