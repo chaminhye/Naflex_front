@@ -1,8 +1,22 @@
-import { Link } from 'react-router-dom';
 import React, { useState } from 'react';
+import  { useHistory} from 'react-router'; 
 
 function Home () {
     const [username, setUsername] = useState('');
+    
+    const history = useHistory();
+
+    // 이메일 정규식
+    const emailRegex = /^(([^<>()\[\].,;:\s@"]+(\.[^<>()\[\].,;:\s@"]+)*)|(".+"))@(([^<>()[\].,;:\s@"]+\.)+[^<>()[\].,;:\s@"]{2,})$/i;
+    
+    const startClicked = ({username}) => {
+        if (emailRegex.test(username)){
+            history.push(`/signUp/${username}`);
+        }else{
+            alert("이메일의 형식이 올바르지 않습니다.")
+            return (false)
+        }
+    }
 
     return(
         <div>
@@ -14,13 +28,14 @@ function Home () {
                         <h2>다양한 디바이스에서 시청하세요. 언제든 해지하실 수 있습니다.</h2>
                         <h3>시청할 준비가 되셨나요? 멤버십을 등록하거나 재시작하려면 이메일 주소를 입력하세요.</h3>
                         <div className="home__input">
-                            <input type="email" maxLength="50" onChange={({ target: { value } }) => setUsername(value)} value={username} className="home__input--text"></input>
+                            <input type="email" maxLength="50" 
+                                    onChange={({ target: { value } }) => setUsername(value)} 
+                                    value={username} className="home__input--text"
+                                    />
 
-                            <Link to="/signUp">
-                            <button className="btn--red">
+                            <button className="btn--red" onClick={() => startClicked({username})}  >
                                 <span className="btn--txt">시작하기 </span>
                             </button>
-                            </Link>
                         </div>
                     </div>
 
@@ -32,7 +47,7 @@ function Home () {
                             </h2>
                         </div>
                         <div className="watchOnTv--img">
-                            <img alt="watchOnTv-img" class="img" src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png"></img>
+                            <img alt="watchOnTv-img" className="img" src="https://assets.nflxext.com/ffe/siteui/acquisition/ourStory/fuji/desktop/tv.png"></img>
                         </div>
                     </div>
 
