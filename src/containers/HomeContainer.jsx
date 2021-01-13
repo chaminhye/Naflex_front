@@ -5,12 +5,12 @@ import Layout from './Layout';
 import Footer from '../components/common/Footer';
 
 // 로그인 후 화면
-export default function HomeContainer(){
+export default function HomeContainer({idx}){
     return (
         <>
             <Nav/>
             <Header/>
-            <Layout/>
+            <Layout props={idx}/>
             <Footer/>
         </>
     )

@@ -3,7 +3,7 @@ import { FiBell, FiGift, FiSmile } from "react-icons/fi";
 import { Link } from 'react-router-dom';
 import SearchInput from '../../containers/SearchInput';
 import NetflixLogo from '../../static/images/Naflex_Logo.png';
-
+import AuthenticationService from '../../utils/AuthenticationService';
 /**
  *      /src/component 폴더는 React 컴포넌트로 구성된 폴더, 컴포넌트를 보통 도메인별로 구분
  *          - container component : 여러개의 프레젠테이션 컴포넌트로 구성, 비즈니스 로직 구현 O
@@ -31,7 +31,7 @@ const Nav = (props) => {
     // 2. 로그인 이후 > profiles >> 로고만 보임
     //               > home >> 전체 다 노출     
 
-    const isLogin = localStorage.getItem('token');
+    const isLogin = AuthenticationService.isUserLoggedIn();
     const currentUrl = window.location.href.includes('/home/') ;
     
     return (

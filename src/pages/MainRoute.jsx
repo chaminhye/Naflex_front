@@ -12,8 +12,8 @@ export default function MainRoute(){
     return (
         <Switch>
             <Route path="/" exact component={MainContainer}/>
-            <Route path="/home"  component={HomeContainer}/>
-            <Route path="/profiles" component={ProfilesContainer}/>
+            <Route path="/home/:idx"  component={HomeContainer}/>
+            <Route path="/profiles/" component={ProfilesContainer}/>
             <Route path="/login" component={LoginContainer}/>
             <Route path="/signUp/:username" component={SignUpContainer} />
             <Route path="/player" component={Player}/>
