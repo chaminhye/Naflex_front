@@ -1,4 +1,5 @@
 import axios from 'axios';
+import {MOVIE_API_KEY, MOVIE_API_BASE_URL} from '../constants/index'
 /**
  *     src/action 폴더는 애플리케이션에서 사용하는 명령어와 api 통신과 같은 작업을 하는 액션메서드를 모아둔 폴더이다
  *      - 액션 메서드에서는 리듀서(reducer)로 데이터 생성을 요청한다. 
@@ -17,9 +18,6 @@ export const FETCH_HORROR_MOVIES = 'FETCH_HORROR_MOVIES';
 export const FETCH_ROMANCE_MOVIES = 'FETCH_ROMANCE_MOVIES';
 export const FETCH_DOCUMENTARIES = 'FETCH_DOCUMENTARIES';
 
-const API_KEY = '2ff32a0ae484b0000c3f1f4f2eb34392';
-const BASE_URL = `https://api.themoviedb.org/3`
-
 
 /* action creators 메서드*/
 export const fetchTrendData = (data) => {
@@ -34,7 +32,7 @@ export const fetchTrendData = (data) => {
 // 응답이 온 후 dispatch()메서드를 호출하면 정상적으로 비동기 통신을 적용할 수 있다.
 export const fetchTrending = () => {
   return (dispatch) => {
-      return axios.get(`${BASE_URL}/trending/all/week?api_key=${API_KEY}&language=en-US`)
+      return axios.get(`${MOVIE_API_BASE_URL}/trending/all/week?api_key=${MOVIE_API_KEY}&language=ko`)
           .then(response => {
               dispatch(fetchTrendData(response.data))
           })
@@ -53,7 +51,7 @@ export const fetchNetflixData = (data) => {
 
 export function fetchNetflixOriginals() {
   return (dispatch) => {
-    return axios.get(`${BASE_URL}/discover/tv?api_key=${API_KEY}&with_networks=213`)
+    return axios.get(`${MOVIE_API_BASE_URL}/discover/tv?api_key=${MOVIE_API_KEY}&with_networks=213&language=ko`)
       .then(response => {
         dispatch(fetchNetflixData(response.data))
       })
@@ -72,7 +70,7 @@ export const fetchTopData = (data) => {
 
 export function fetchTopRated() {
   return (dispatch) => {
-    return axios.get(`${BASE_URL}/movie/top_rated?api_key=${API_KEY}&language=en-US`)
+    return axios.get(`${MOVIE_API_BASE_URL}/movie/top_rated?api_key=${MOVIE_API_KEY}&language=ko`)
       .then(response => {
         dispatch(fetchTopData(response.data))
       })
@@ -91,7 +89,7 @@ export const fetchActionData = (data) => {
 
 export const fetchActionMovies = () => {
   return (dispatch) => {
-    return axios.get(`${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=28`)
+    return axios.get(`${MOVIE_API_BASE_URL}/discover/movie?api_key=${MOVIE_API_KEY}&with_genres=28&language=ko`)
       .then(response => {
         dispatch(fetchActionData(response.data))
       })
@@ -110,7 +108,7 @@ export const fetchComedyData = (data) => {
 
 export function fetchComedyMovies() {
   return (dispatch) => {
-    return axios.get(`${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=35`)
+    return axios.get(`${MOVIE_API_BASE_URL}/discover/movie?api_key=${MOVIE_API_KEY}&with_genres=35&language=ko`)
       .then(response => {
         dispatch(fetchComedyData(response.data))
       })
@@ -129,7 +127,7 @@ export const fetchHorrorData = (data) => {
 
 export function fetchHorrorMovies() {
   return (dispatch) => {
-    return axios.get(`${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=27`)
+    return axios.get(`${MOVIE_API_BASE_URL}/discover/movie?api_key=${MOVIE_API_KEY}&with_genres=27&language=ko`)
       .then(response => {
         dispatch(fetchHorrorData(response.data))
       })
@@ -148,7 +146,7 @@ export const fetchRomanceData = (data) => {
 
 export function fetchRomanceMovies() {
   return (dispatch) => {
-    return axios.get(`${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=10749`)
+    return axios.get(`${MOVIE_API_BASE_URL}/discover/movie?api_key=${MOVIE_API_KEY}&with_genres=10749&language=ko`)
       .then(response => {
         dispatch(fetchRomanceData(response.data))
       })
@@ -167,7 +165,7 @@ export const fetchDocumentData = (data) => {
 
 export function fetchDocumentaries() {
   return (dispatch) => {
-    return axios.get(`${BASE_URL}/discover/movie?api_key=${API_KEY}&with_genres=99`)
+    return axios.get(`${MOVIE_API_BASE_URL}/discover/movie?api_key=${MOVIE_API_KEY}&with_genres=99&language=ko`)
       .then(response => {
         dispatch(fetchDocumentData(response.data))
       })

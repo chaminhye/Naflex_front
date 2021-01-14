@@ -15,11 +15,11 @@ const Layout = () => {
     return (
         <div className="layout">
             <NetflixOriginalContainer/>
-            <ActionContainer/>
+            {/* <TopRatedContainer/>
             <TrendContainer/>
-            <TopRatedContainer/>
+            <ActionContainer/>
             <ComedyContainer/>
-            <RomanceContainer/>
+            <RomanceContainer/> */}
             <HorrorContainer/>
         </div>
     )

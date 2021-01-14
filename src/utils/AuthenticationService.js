@@ -4,9 +4,7 @@ import {BASE_URL} from '../constants';
 class AuthenticationService {
     // send username to the SERVER
     signup(username, pwd) {
-        // console.log(username)
         return axios.get(`${BASE_URL}/api/saveMember`,{
-        // // return axios.get(`${BASE_URL}/api/saveMember?username=12&password=12`,{
             params :{
                 email :username,
                 password : pwd 

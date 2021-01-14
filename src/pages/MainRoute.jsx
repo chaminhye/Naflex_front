@@ -1,7 +1,7 @@
 import React from 'react';
 import { Switch,Route } from 'react-router-dom';
 import ProfilesContainer from '../containers/ProfilesContainer';
-import Player from '../components/movies/Player';
+import MoviePlayer from '../components/movies/MoviePlayer';
 import MainContainer from '../containers/MainContainer';
 import HomeContainer from '../containers/HomeContainer';
 import LoginContainer from '../containers/LoginContainer';
@@ -16,7 +16,7 @@ export default function MainRoute(){
             <Route path="/profiles" component={ProfilesContainer}/>
             <Route path="/login" component={LoginContainer}/>
             <Route path="/signUp/:username" component={SignUpContainer} />
-            <Route path="/player" component={Player}/>
+            <Route path="/MoviePlay/:id" component={MoviePlayer}/>
             <Route path="/credentials" component={CredentialContainer}/>
         </Switch>
     )

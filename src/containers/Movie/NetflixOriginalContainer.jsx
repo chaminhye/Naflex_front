@@ -15,7 +15,7 @@ const NetflixOriginalContainer = () => {
 
     return (
         <div>
-            <p>Netflix Originals</p>
+            <p>Netflix 오리지널</p>
             <div className="netflixContainer">
                 { netflixData.results && netflixData.results.map(movie => (
                     <NetflixMovie props={movie} key={movie.id}/>

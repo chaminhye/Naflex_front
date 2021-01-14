@@ -9,13 +9,13 @@ const DocumentaryContainer = (props) => {
 
         useEffect(() => {
             dispatch(fetchDocumentaries());
-        }, []);
+        }, );
 
         const documentaryData = useSelector(state => state.documentary.movies, []) || [];
 
     return (
         <div>
-            <p>Documentary Movies</p>
+            <p>실화</p>
             <div className="movieContainer">
                 { documentaryData.results && documentaryData.results.map(movie => (
                     <Movie props={movie} key={movie.id}/>

@@ -4,7 +4,8 @@
     font-weight: 500;
     height: 100vh;
     display: flex;
-    background-image: url('/static/images/login_bg.jpg');
+    background-image: linear-gradient(rgba(255, 255, 255, 0.3), rgba(255, 255, 255, 0.3)),
+                      url('/static/images/login_bg.jpg');
 
     @include responsive(tab_port) {
         width: 100%;
@@ -28,10 +29,9 @@
     &__wrapper{
         color: white;
         font-size: 1.5em;
-        margin-top: 4rem;
+        margin: 4rem 0 0 48rem;
         border: 1px solid #000000;
-        margin-left: 700px;
-        margin-bottom: auto;
+        display: inline-block;
         background: $color-background;
         height: 30rem;
         width: 25rem;

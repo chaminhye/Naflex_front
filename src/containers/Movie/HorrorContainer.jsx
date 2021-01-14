@@ -9,14 +9,14 @@ const HorrorContainer = (props) => {
 
         useEffect(() => {
             dispatch(fetchHorrorMovies());
-        }, []);
+        }, );
 
         const horrorData = useSelector(state => state.horror.movies, []) || [];
 
 
     return (
         <div>
-            <p>Horror Movies</p>
+            <p>SF & 호러</p>
             <div className="movieContainer">
                 { horrorData.results && horrorData.results.map(movie => (
                     <Movie props={movie} key={movie.id}/>

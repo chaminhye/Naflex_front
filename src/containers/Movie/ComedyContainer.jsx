@@ -9,13 +9,13 @@ const ComedyContainer = (props) => {
 
         useEffect(() => {
             dispatch(fetchComedyMovies());
-        }, []);
+        },);
 
         const comedyData = useSelector(state => state.comedy.movies, []) || [];
 
     return (
         <div>
-            <p>Comedy Movies</p>
+            <p>코미디</p>
             <div className="movieContainer">
                 { comedyData.results && comedyData.results.map(movie => (
                     <Movie props={movie} key={movie.id}/>
