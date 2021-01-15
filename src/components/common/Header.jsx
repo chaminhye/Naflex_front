@@ -13,7 +13,7 @@ const Header = () => {
                 <div className="headerContainer">
                     <img src={backgroundImg} alt="stranger"/>
                     <div className="headerContents">
-                        <h1>LACASA DE PAPEL</h1>
+                        <h1>종이의 집2</h1>
                         <p>종이의 집은 스페인에서 2017년 5월 2일부터 방송된 스페인의 조폐소와 중앙 은행을 습격하는 내용의 범죄 스릴러 드라마다</p>
                         <div className="btn">
                             <button><FiPlay/><span>PLAY</span></button>

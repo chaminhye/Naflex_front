@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchTopRated } from '../../actions/index';
+import { fetchMovieTopRated } from '../../actions/index';
 import Movie from '../../components/movies/Movie';
 
 
@@ -9,7 +9,7 @@ const TopRatedContainer = (props) => {
     const dispatch = useDispatch();
 
         useEffect(() => {
-            dispatch(fetchTopRated());
+            dispatch(fetchMovieTopRated());
         }, []);
 
         const topRatedData = useSelector(state => state.topRated.movies, []) || [];

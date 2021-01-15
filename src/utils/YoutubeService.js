@@ -10,7 +10,8 @@ class YoutubeService{
                 maxResults : 1,                             // 1개 조회
                 type : "video",                             // video 타입
                 field : 'items(id(videoId))',
-                order : "viewCount",                        // 조회수 많은 순으로
+                // order : "rating",                          // 평가순으로 , 조회수 많은 순으로
+                region : "ko",                              // 지역
                 channelId : "UCiEEF51uRAeZeCo8CJFhGWw"      // Netflix 채널안에서 검색
                                                             // UCiEEF51uRAeZeCo8CJFhGWw   : Netflix Korea
                                                             // UCWOA1ZGywLbqmigxE4Qlvuw   : Netflix
