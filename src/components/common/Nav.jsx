@@ -32,8 +32,10 @@ const Nav = (props) => {
     //               > home >> 전체 다 노출     
 
     const isLogin = localStorage.getItem('token');
-    const currentUrl = window.location.href.includes('/home/') ;
+    const urls = ['/home','/tvShow','/movies'];
+    const currentUrl = urls.indexOf(document.location.pathname);
     
+    console.log('currentUrl',currentUrl,document.location.pathname );
     return (
         <>
             <nav className={"navigation " + (scrolling ? "black" : "" )}>
@@ -42,7 +44,7 @@ const Nav = (props) => {
                         <Link to="/"><img className="navigation_container logo" src={NetflixLogo} alt="logo" /></Link>
                         {isLogin && currentUrl ?
                             <>
-                            <Link to="/tvShow" className="no--line--link"><div className="navigation_container link">홈</div></Link>
+                            <Link to="/" className="no--line--link"><div className="navigation_container link">홈</div></Link>
                             <Link to="/tvShow" className="no--line--link"><div className="navigation_container link">TV 프로그램</div></Link>
                             <Link to="/movies" className="no--line--link"><div className="navigation_container link">영화</div></Link>
                             <Link to="/recently" className="no--line--link"><div className="navigation_container link">최근 시청 목록</div></Link>

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { fetchTrending } from '../../actions/index';
-import Movie from '../../components/movies/Movie';
+import NetflixMovie from '../../components/movies/NetflixMovie';
 
 const TrendContainer = (props) => {
 
@@ -17,9 +17,9 @@ const TrendContainer = (props) => {
     return (
         <div>
             <p>지금 뜨는 콘텐츠</p>  
-            <div className="movieContainer">
+            <div className="netflixContainer">
                 { TrendData.results && TrendData.results.map(movie => (
-                    <Movie props={movie} key={movie.id}/>
+                    <NetflixMovie props={movie} key={movie.id}/>
                 ))}
             </div>
         </div>

@@ -5,7 +5,7 @@ import MoviePlayer from '../components/movies/MoviePlayer';
 import MainContainer from '../containers/MainContainer';
 import HomeContainer from '../containers/home/HomeContainer';
 import MovieContainer from '../containers/movie/MovieContainer';
-import TvContainer from '../containers/tv/TvContainer';
+import TvContainer from '../containers/tvshow/TvContainer';
 import LoginContainer from '../containers/LoginContainer';
 import SignUpContainer from '../containers/SignUpContainer';
 import CredentialContainer from '../containers/CredentialContainer';
@@ -15,8 +15,8 @@ export default function MainRoute(){
         <Switch>
             <Route path="/" exact component={MainContainer}/>
             <Route path="/home"  component={HomeContainer}/>
-            <Route path="/movie"  component={MovieContainer}/>
-            <Route path="/tv"  component={TvContainer}/>
+            <Route path="/movies"  component={MovieContainer}/>
+            <Route path="/tvShow"  component={TvContainer}/>
             <Route path="/profiles" component={ProfilesContainer}/>
             <Route path="/login" component={LoginContainer}/>
             <Route path="/signUp/:username" component={SignUpContainer} />

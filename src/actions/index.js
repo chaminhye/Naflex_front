@@ -18,6 +18,8 @@ export const FETCH_COMEDY_MOVIES = 'FETCH_COMEDY_MOVIES';
 export const FETCH_HORROR_MOVIES = 'FETCH_HORROR_MOVIES';
 export const FETCH_ROMANCE_MOVIES = 'FETCH_ROMANCE_MOVIES';
 export const FETCH_DOCUMENTARIES = 'FETCH_DOCUMENTARIES';
+export const FETCH_TV_KOREA = 'FETCH_TV_KOREA';
+export const FETCH_MOVIE_KOREA = 'FETCH_MOVIE_KOREA';
 
 
 /* action creators 메서드*/
@@ -27,7 +29,6 @@ export const fetchTrendData = (data) => {
       data
   }
 }
-
 
 // dispatch() 메서드를 파라미터로 받는 함수를 만들고, 
 // 응답이 온 후 dispatch()메서드를 호출하면 정상적으로 비동기 통신을 적용할 수 있다.
@@ -60,9 +61,7 @@ export function fetchNetflixOriginals() {
           throw(error);
       })
   }
-}
-
-export const fetchMovieTopData = (data) => {
+}export const fetchMovieTopData = (data) => {
   return {
       type: FETCH_MOVIE_TOP_RATED,
       data
@@ -187,6 +186,42 @@ export function fetchDocumentaries() {
     return axios.get(`${MOVIE_API_BASE_URL}/discover/movie?api_key=${MOVIE_API_KEY}${MOVIE_API_BASE_PARAM}&with_genres=99`)
       .then(response => {
         dispatch(fetchDocumentData(response.data))
+      })
+      .catch(error => {
+        throw(error);
+      })
+  }
+}
+export const fetchTvKoreaData = (data) => {
+  return {
+      type: FETCH_TV_KOREA,
+      data
+  }
+}
+
+export function fetchTvKorea() {
+  return (dispatch) => {
+    return axios.get(`${MOVIE_API_BASE_URL}/discover/tv?api_key=${MOVIE_API_KEY}${MOVIE_API_BASE_PARAM}&sort_by=popularity.desc&page=1&with_original_language=ko&region=ko`)
+      .then(response => {
+        dispatch(fetchTvKoreaData(response.data))
+      })
+      .catch(error => {
+        throw(error);
+      })
+  }
+}
+export const fetchTvMoiveData = (data) => {
+  return {
+      type: FETCH_TV_KOREA,
+      data
+  }
+}
+
+export function fetchTvMoive() {
+  return (dispatch) => {
+    return axios.get(`${MOVIE_API_BASE_URL}/discover/movie?api_key=${MOVIE_API_KEY}${MOVIE_API_BASE_PARAM}&sort_by=popularity.desc&with_original_language=ko`)
+      .then(response => {
+        dispatch(fetchTvMoiveData(response.data))
       })
       .catch(error => {
         throw(error);
