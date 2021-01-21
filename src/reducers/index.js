@@ -2,6 +2,7 @@ import { combineReducers } from 'redux';
 import TrendingReducer from './reducerTrending';
 import NetflixOriginalsReducer from './reducerNetflixOriginals';
 import TopRatedReducer from './reducerTopRated';
+// import {reducerTopRated} from './reducerMovies';
 import ActionMoviesReducer from './reducerActionMovies';
 import ComedyMoviesReducer from './reducerComedyMovies';
 import HorrorMoviesReducer from './reducerHorrorMovies';
@@ -15,8 +16,8 @@ import DocumentaryReducer from './reducerDocumentary';
  */
 const rootReducer = combineReducers({
   trending: TrendingReducer,
-  netflixOriginals: NetflixOriginalsReducer,
   topRated: TopRatedReducer,
+  netflixOriginals: NetflixOriginalsReducer,
   action: ActionMoviesReducer,
   comedy: ComedyMoviesReducer,
   horror: HorrorMoviesReducer,

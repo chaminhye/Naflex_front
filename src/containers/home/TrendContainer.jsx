@@ -1,23 +1,26 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchNetflixOriginals } from '../../actions/index';
+import { fetchTrending } from '../../actions/index';
 import NetflixMovie from '../../components/movies/NetflixMovie';
 
-const NetflixOriginalContainer = () => {
+const TrendContainer = (props) => {
 
     const dispatch = useDispatch();
 
         useEffect(() => {
-            dispatch(fetchNetflixOriginals());
+            dispatch(fetchTrending());
         }, []);
 
-        const netflixData = useSelector(state => state.netflixOriginals.movies, []) || [];
+        const TrendData = useSelector(state => state.trending.movies, []) || [];
+
 
     return (
         <div>
-            <p>Netflix Originals</p>
+            <div className="content-title">
+                <h2>지금 뜨는 콘텐츠</h2>  
+            </div>
             <div className="netflixContainer">
-                { netflixData.results && netflixData.results.map(movie => (
+                { TrendData.results && TrendData.results.map(movie => (
                     <NetflixMovie props={movie} key={movie.id}/>
                 ))}
             </div>
@@ -25,4 +28,4 @@ const NetflixOriginalContainer = () => {
     )
 }
 
-export default NetflixOriginalContainer;
+export default TrendContainer;

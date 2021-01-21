@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import Modal from './Modal';
 
 const NetflixMovie = (props) => {
-
     const [modal, setModal] = useState(false);
 
     const showModal = () => {
@@ -22,10 +21,11 @@ const NetflixMovie = (props) => {
             
             <Modal
                 containerName={"modalContainer " + (modal ? "show" : "hide")}
-                name={props.props.name}
+                name={props.props.title}
                 overview={props.props.overview}
                 show={modal}
                 img={props.props.backdrop_path}
+                id={props.props.id}
                 onClick={() => closeModal()}
             />
          </>   

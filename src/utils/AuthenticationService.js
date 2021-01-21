@@ -4,9 +4,7 @@ import {BASE_URL} from '../constants';
 class AuthenticationService {
     // send username to the SERVER
     signup(username, pwd) {
-        // console.log(username)
         return axios.get(`${BASE_URL}/api/saveMember`,{
-        // // return axios.get(`${BASE_URL}/api/saveMember?username=12&password=12`,{
             params :{
                 email :username,
                 password : pwd 
@@ -28,8 +26,10 @@ class AuthenticationService {
         return axios.get(`${BASE_URL}/hello`);
     }
 
-    registerSuccessfulLoginForJwt(username, token) {
-        localStorage.setItem('token', token);
+    registerSuccessfulLoginForJwt(username, data) {
+        localStorage.setItem('token', data.jwttoken);
+        console.log('registerSuccessfulLoginForJwt', data)
+        localStorage.setItem('users', JSON.stringify(data.users));
         localStorage.setItem('authenticatedUser', username);
         // sessionStorage.setItem('authenticatedUser', username)
         //this.setupAxiosInterceptors(this.createJWTToken(token))

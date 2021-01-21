@@ -17,8 +17,10 @@ function Login(){
         AuthenticationService
         .executeJwtAuthenticationService(data)
         .then((response) => {
-            AuthenticationService.registerSuccessfulLoginForJwt(username,response.data.jwttoken)
-            history.push(`/home`)
+            console.log(response)
+            AuthenticationService.registerSuccessfulLoginForJwt(username,response.data)
+            // [TODO] 사용자 정보 어떻게 넘길지 고민!!
+            history.push(`/profiles`)
         }).catch( () =>{
             console.log({showSuccessMessage:false})
             console.log({hasLoginFailed:true})

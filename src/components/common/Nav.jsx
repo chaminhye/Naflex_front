@@ -32,26 +32,29 @@ const Nav = (props) => {
     //               > home >> 전체 다 노출     
 
     const isLogin = localStorage.getItem('token');
-    const currentUrl = window.location.href.includes('/home/') ;
+    const userIdx = localStorage.getItem('userIdx');
+    const urls = ['/home','/tvShow','/movies'];
+    const currentUrl = urls.indexOf(document.location.pathname);
     
+    // console.log('currentUrl',currentUrl,document.location.pathname );
     return (
         <>
             <nav className={"navigation " + (scrolling ? "black" : "" )}>
                 <ul className="navigation_container">
                     <div className="navigation_container left">
                         <Link to="/"><img className="navigation_container logo" src={NetflixLogo} alt="logo" /></Link>
-                        {isLogin && currentUrl ?
+                        {isLogin ?
                             <>
-                            <Link to="/tvShow" className="no--line--link"><div className="navigation_container link">홈</div></Link>
-                            <Link to="/tvShow" className="no--line--link"><div className="navigation_container link">TV 프로그램</div></Link>
-                            <Link to="/movies" className="no--line--link"><div className="navigation_container link">영화</div></Link>
-                            <Link to="/recently" className="no--line--link"><div className="navigation_container link">최근 시청 목록</div></Link>
-                            <Link to="/myList" className="no--line--link"><div className="navigation_container link">내가 찜한 콘텐츠</div></Link>
+                            <Link to={'/home/'+userIdx} className="no--line--link"><div className="navigation_container link">홈</div></Link>
+                            <Link to={'/tvShow/'+userIdx} className="no--line--link"><div className="navigation_container link">TV 프로그램</div></Link>
+                            <Link to={'/movies/'+userIdx} className="no--line--link"><div className="navigation_container link">영화</div></Link>
+                            <Link to={'/recently/'+userIdx} className="no--line--link"><div className="navigation_container link">최근 시청 목록</div></Link>
+                            <Link to={'/myList/'+userIdx} className="no--line--link"><div className="navigation_container link">내가 찜한 콘텐츠</div></Link>
                             </>
                          : null}
                     </div>
                     <div className="icons">
-                        {isLogin && currentUrl  ?
+                        {isLogin ?
                             <>
                             <div className="search-box">
                                 <SearchInput/>

@@ -20,7 +20,7 @@ const ActionContainer = (props) => {
 
     return (
         <div>
-            <p>Action Movies</p>
+            <p>액션 & 어드벤처</p>
             <div className="movieContainer">
                 { actionData.results && actionData.results.map(movie => (
                     <Movie props={movie} key={movie.id}/>
