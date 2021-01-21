@@ -2,6 +2,13 @@ import React from 'react';
 
 function Profiles(){
     const users = JSON.parse(localStorage.getItem('users'))
+    
+    const setUserSave = (userIdx) => {
+        console.log('Profiles userIdx  :: ',userIdx)
+        localStorage.removeItem('userIdx')
+        localStorage.setItem('userIdx', userIdx)
+    }
+
     return(
     <div>
         <div className="profiles">
@@ -12,7 +19,7 @@ function Profiles(){
                     {users.map(user => (
                         <li className="profile" key={user.userIdx}>
                             <div>
-                                <a className="profile--link" href={'/home/'+user.userIdx}
+                                <a className="profile--link" href={'/home/'+user.userIdx} onClick={() => setUserSave(user.userIdx)}
                                     data-uia="action-select-profile+primary">
                                     <div className="profile--wrapper">
                                         <div className="profile--wrapper icon"/>

@@ -6,7 +6,6 @@ import Footer from '../components/common/Footer';
 
 // 로그인 후 화면
 export default function HomeContainer({match}){
-    console.log('HomeContainer || ',match)
 
     return (
         <>

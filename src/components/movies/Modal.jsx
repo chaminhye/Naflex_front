@@ -6,18 +6,23 @@ import { FiInfo } from 'react-icons/fi';
 import  { useHistory} from 'react-router'; 
 import YoutubeService from '../../utils/YoutubeService';
 
-const Modal = ({ name, overview, img, show, containerName, onClick}) => {
+const Modal = ({ name, overview, img, show, containerName, id, onClick}) => {
+
+    const data = {
+        "vodIdx" : id,
+        "vodName" : name,
+        "userIdx" : localStorage.getItem('userIdx')
+    }
+
     const history = useHistory();
     const goPlay = () => {
-        YoutubeService.getSearchMovieName(name)
+        YoutubeService.getSearchMovieName(data)
         .then((response) => {
-            // console.log(response.data.items[0].id.videoId)
             const videoId = response.data.items[0].id.videoId
             history.push(`/MoviePlay/${videoId}`)
         }).catch((error) => {
             console.log(error)
         })
-        // history.push(`/MoviePlay/${name}`)
     }
 
     return (

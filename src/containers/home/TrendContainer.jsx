@@ -16,7 +16,9 @@ const TrendContainer = (props) => {
 
     return (
         <div>
-            <p>지금 뜨는 콘텐츠</p>  
+            <div className="content-title">
+                <h2>지금 뜨는 콘텐츠</h2>  
+            </div>
             <div className="netflixContainer">
                 { TrendData.results && TrendData.results.map(movie => (
                     <NetflixMovie props={movie} key={movie.id}/>
