@@ -1,18 +1,17 @@
 import React, { useEffect } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { fetchMovieTopRated } from '../../actions/index';
+import { fetchTvPopular } from '../../actions/index';
 import NetflixMovie from '../../components/movies/NetflixMovie';
 
 
-const TopRatedContainer = (props) => {
-
+const TopRatedTvContainer = (props) => {
     const dispatch = useDispatch();
 
     useEffect(() => {
-        dispatch(fetchMovieTopRated());
+        dispatch(fetchTvPopular());
     },[]);
 
-    const topRatedData = useSelector(state => state.topRated.movies, []) || [];
+    const topRatedData = useSelector(state => state.popular.movies, []) || [];
     
     return (
         <div>
@@ -26,4 +25,4 @@ const TopRatedContainer = (props) => {
     )
 }
 
-export default TopRatedContainer;
+export default TopRatedTvContainer;

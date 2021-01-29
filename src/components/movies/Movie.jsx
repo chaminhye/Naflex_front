@@ -12,6 +12,7 @@ const Movie = (props) => {
         setModal(false);
     }
 
+    const title = props.props.title == null ? props.props.name :props.props.title;
 
     return (
         <>
@@ -20,7 +21,7 @@ const Movie = (props) => {
             </div>
             <Modal
                 containerName={"modalContainer " + (modal ? "show" : "hide")}
-                name={props.props.title}
+                name={title}
                 overview={props.props.overview}
                 show={modal}
                 img={props.props.backdrop_path}

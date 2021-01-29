@@ -12,6 +12,8 @@ const NetflixMovie = (props) => {
         setModal(false);
     }
 
+    const title = props.props.title == null ? props.props.name :props.props.title;
+
     return (
         <>
             <div className="netflixMovie"  onClick={() => showModal()}>
@@ -21,7 +23,7 @@ const NetflixMovie = (props) => {
             
             <Modal
                 containerName={"modalContainer " + (modal ? "show" : "hide")}
-                name={props.props.title}
+                name={title}
                 overview={props.props.overview}
                 show={modal}
                 img={props.props.backdrop_path}

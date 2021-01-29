@@ -1,8 +1,8 @@
-import { FETCH_MOVIE_TOP_RATED } from '../actions/index';
+import { FETCH_TV_KOREA } from '../actions/index';
 
-export default function reducerTopRated(state = [], action) {
+export default function reducerKoreaTv(state = [], action) {
   switch (action.type) {
-      case FETCH_MOVIE_TOP_RATED:
+      case FETCH_TV_KOREA:
           return {
             ...state,
             movies: action.data,

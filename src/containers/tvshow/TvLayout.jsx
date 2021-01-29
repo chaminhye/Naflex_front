@@ -1,6 +1,7 @@
 import React from 'react';
-import TopRatedContainer from '../movie/TopRatedContainer';
-import NetflixOriginalContainer from './NetflixOriginalContainer';
+import PopularTvContainer from './PopularTvContainer';
+import TvAiringContainer from './TvAiringContainer';
+import KoreaTvContainer from './KoreaTvContainer';
 
 /**
  *      각 장르들에 대한 action을 dispatch해 컴포넌트에 데이터를 전달해 UI로 보여줄 수 있도록 action별로 파일을 만들었고
@@ -10,8 +11,9 @@ const HomeLayout = () => {
 
     return (
         <div className="layout">
-            <NetflixOriginalContainer/>
-            <TopRatedContainer genre="tv"/>
+            <PopularTvContainer/>
+            <TvAiringContainer/>
+            <KoreaTvContainer/>
         </div>
     )
 }

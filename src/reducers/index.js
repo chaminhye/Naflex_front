@@ -1,13 +1,17 @@
 import { combineReducers } from 'redux';
 import TrendingReducer from './reducerTrending';
-import NetflixOriginalsReducer from './reducerNetflixOriginals';
 import TopRatedReducer from './reducerTopRated';
-// import {reducerTopRated} from './reducerMovies';
 import ActionMoviesReducer from './reducerActionMovies';
 import ComedyMoviesReducer from './reducerComedyMovies';
 import HorrorMoviesReducer from './reducerHorrorMovies';
 import RomanceMoviesReducer from './reducerRomanceMovies';
-import DocumentaryReducer from './reducerDocumentary';
+import PopularReducer from './reducerPopular';
+import AiringTv from './reducerTvAiring';
+import ScreenMovie from './reducerMovieScreen';
+import KoreaTv from './reducerKoreaTv';
+
+import reducerDetail from './reducerDetail';
+import MyHistoryList from './reducerMyHistoryList';
 
 
 /**
@@ -15,14 +19,18 @@ import DocumentaryReducer from './reducerDocumentary';
  *        - index.js : combineReducers을 통해 만든 루트리듀서 파일.
  */
 const rootReducer = combineReducers({
+  detail : reducerDetail,
   trending: TrendingReducer,
   topRated: TopRatedReducer,
-  netflixOriginals: NetflixOriginalsReducer,
+  popular: PopularReducer,
+  airingTv: AiringTv,
+  screenMovie: ScreenMovie,
+  koreaTv : KoreaTv,
   action: ActionMoviesReducer,
   comedy: ComedyMoviesReducer,
   horror: HorrorMoviesReducer,
   romance: RomanceMoviesReducer,
-  documentary: DocumentaryReducer,
+  myList : MyHistoryList
 });
 
 export default rootReducer;

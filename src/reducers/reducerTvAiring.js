@@ -1,8 +1,8 @@
-import { FETCH_MOVIE_TOP_RATED } from '../actions/index';
+import { FETCH_TV_AIRING } from '../actions/index';
 
-export default function reducerTopRated(state = [], action) {
+export default function reducerTvAiring(state = [], action) {
   switch (action.type) {
-      case FETCH_MOVIE_TOP_RATED:
+      case FETCH_TV_AIRING:
           return {
             ...state,
             movies: action.data,

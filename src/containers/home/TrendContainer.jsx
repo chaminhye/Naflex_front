@@ -4,14 +4,14 @@ import { fetchTrending } from '../../actions/index';
 import NetflixMovie from '../../components/movies/NetflixMovie';
 
 const TrendContainer = (props) => {
-
+    setTimeout( 5000    )
     const dispatch = useDispatch();
 
-        useEffect(() => {
-            dispatch(fetchTrending());
-        }, []);
+    useEffect(() => {
+        dispatch(fetchTrending());
+    }, []);
 
-        const TrendData = useSelector(state => state.trending.movies, []) || [];
+    const TrendData = useSelector(state => state.trending.movies, []) || [];
 
 
     return (

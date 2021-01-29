@@ -1,6 +1,6 @@
 import React from 'react';
 import Nav from '../../components/common/Nav';
-import Header from '../../components/common/Header';
+import HeaderContainer from '../HeaderContainer';
 import MovieLayout from './MovieLayout';
 import Footer from '../../components/common/Footer';
 
@@ -9,7 +9,7 @@ export default function HomeContainer(){
     return (
         <>
             <Nav/>
-            <Header/>
+            <HeaderContainer type="movie"/>
             <MovieLayout/>
             <Footer/>
         </>
