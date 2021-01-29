@@ -7,9 +7,7 @@
         display: block;
         font-size: 1.5em;
         margin-block-start: 0.83em;
-        // margin-block-end: 0.83em;
         margin-inline-start: 0px;
-        // margin-inline-end: 0px;
         font-weight: bold;
         color: #e5e5e5;
     }
@@ -22,7 +20,7 @@
         font-size: 1.4vw;
         color: #e5e5e5;
         font-weight: 700;
-        margin: 0 4% .5em 1%;
+        margin: 10px 4% .5em 0%;
         text-decoration: none;
         display: inline-block;
         min-width: 6em;
@@ -129,6 +127,79 @@
     .netflixMovie {
         margin-right: 1rem;
         transition: all 0.2s ease-in;
+
+        &:hover {
+            transform: scale(1.1);
+            opacity: 1;
+        }
+
+        img {
+            height: 27em;
+            cursor: pointer;
+            transition: all 0.2s ease-in;
+
+            @include responsive(tab_port) {
+                height: 20em;
+            }
+
+            @include responsive(phone) {
+                height: 33em;
+            }
+        }
+    }
+}
+.layout--recently{
+    padding: $top-header-padding 78px 0px 45px;
+
+    h2 {
+        font-size: 1.8vw;
+        color: #e5e5e5;
+        font-weight: 700;
+        margin: 3.5rem 4% .5em 1%;
+        text-decoration: none;
+        display: inline-block;
+        min-width: 6em;
+    }
+    p {
+        display: block;
+        font-size: 1.5em;
+        margin-block-start: 0.83em;
+        margin-inline-start: 0px;
+        font-weight: bold;
+        color: #e5e5e5;
+    }
+}
+.myMovieContainer {
+    margin: 1em 2em 1em 2em;
+    padding: 0px 15px 0px 0px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    grid-auto-rows: minmax(100px, auto);
+
+    .p{
+        text-align : center;
+    }
+
+    &::-webkit-scrollbar {
+        background: none;
+        border: 1px solid rgb(48, 48, 48); 
+    }
+    &::-webkit-scrollbar-thumb {
+        background: rgb(85, 85, 85);
+        border-radius: 30px;
+    }
+
+    &:hover .netflixMovie {
+        opacity: .3;
+    }
+
+
+    .myMovie {
+        margin-right: 15rem;
+        margin-bottom: 66px;
+        transition: all 0.2s ease-in;
+        width : 700px;
 
         &:hover {
             transform: scale(1.1);

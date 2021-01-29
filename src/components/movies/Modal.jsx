@@ -11,7 +11,8 @@ const Modal = ({ name, overview, img, show, containerName, id, onClick}) => {
     const data = {
         "vodIdx" : id,
         "vodName" : name,
-        "userIdx" : localStorage.getItem('userIdx')
+        "userIdx" : localStorage.getItem('userIdx'),
+        "vodImg" : img
     }
 
     const history = useHistory();
@@ -19,6 +20,7 @@ const Modal = ({ name, overview, img, show, containerName, id, onClick}) => {
         YoutubeService.getSearchMovieName(data)
         .then((response) => {
             const videoId = response.data.items[0].id.videoId
+            console.log('goPlay ::' ,response)
             history.push(`/MoviePlay/${videoId}`)
         }).catch((error) => {
             console.log(error)
@@ -37,7 +39,7 @@ const Modal = ({ name, overview, img, show, containerName, id, onClick}) => {
                     <div className="btn">
                         <button onClick={() => goPlay()}><FiPlay/><span>PLAY</span></button>
                         <button><FiPlus/><span>MY LIST</span></button>
-                        <button><FiInfo/><span>DETAILS</span></button>
+                        {/* <button><FiInfo/><span>DETAILS</span></button> */}
                     </div>
                 </div>
             </div>

@@ -48,8 +48,7 @@ const Nav = (props) => {
                             <Link to={'/home/'+userIdx} className="no--line--link"><div className="navigation_container link">홈</div></Link>
                             <Link to={'/tvShow/'+userIdx} className="no--line--link"><div className="navigation_container link">TV 프로그램</div></Link>
                             <Link to={'/movies/'+userIdx} className="no--line--link"><div className="navigation_container link">영화</div></Link>
-                            <Link to={'/recently/'+userIdx} className="no--line--link"><div className="navigation_container link">최근 시청 목록</div></Link>
-                            <Link to={'/myList/'+userIdx} className="no--line--link"><div className="navigation_container link">내가 찜한 콘텐츠</div></Link>
+                            <Link to={`/recently/${userIdx}`} className="no--line--link"><div className="navigation_container link">최근 시청 목록</div></Link>
                             </>
                          : null}
                     </div>
@@ -60,10 +59,10 @@ const Nav = (props) => {
                                 <SearchInput/>
                                 {/* <input onChange={onChange} value={value} className="search-txt" type="text" placeholder=" Title "/> */}
                             </div>
-                            <div className="navigation_container link"><FiGift/></div>
+                            {/* <div className="navigation_container link"><FiGift/></div>
                             <div className="navigation_container link"><FiBell/></div>
-                            <div className="navigation_container link"><FiSmile/></div>
-                            <Link to="/logout" className="no--line--link "><div className="navigation_container link loginButton">로그아웃</div></Link>
+                            <div className="navigation_container link"><FiSmile/></div> */}
+                            <Link to="/" className="no--line--link "><div className="navigation_container link loginButton">로그아웃</div></Link>
                             </>
                         : null}
                         {!isLogin &&

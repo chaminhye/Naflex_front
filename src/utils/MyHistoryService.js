@@ -2,16 +2,17 @@ import axios from 'axios';
 import {BASE_URL} from '../constants';
 
 class MyHistoryService{
+    headers ={
+        'Content-Type': 'application/json',
+    };
+
     saveContentHistory(data){
         console.log('saveViewingRecording :: ',data)
-        const headers ={
-            'Content-Type': 'application/json',
-        };
-        return axios.post(`${BASE_URL}/history/saveContentHistory`,data, headers)
+        return axios.post(`${BASE_URL}/history/saveHistory`,data, this.headers)
     }
-
-    saveViewingRecording(){
-
+    
+    getHistoryList(data){
+        return axios.post(`${BASE_URL}/history/getHistoryList`,data, this.headers)
     }
 }
 

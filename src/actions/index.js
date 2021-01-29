@@ -1,5 +1,5 @@
 import axios from 'axios';
-import {MOVIE_API_KEY, MOVIE_API_BASE_URL, MOVIE_API_BASE_PARAM} from '../constants/index'
+import {MOVIE_API_KEY, MOVIE_API_BASE_URL, MOVIE_API_BASE_PARAM, BASE_URL,movie_detail_id, tv_detail_id, home_detail_id} from '../constants/index'
 /**
  *     src/action 폴더는 애플리케이션에서 사용하는 명령어와 api 통신과 같은 작업을 하는 액션메서드를 모아둔 폴더이다
  *      - 액션 메서드에서는 리듀서(reducer)로 데이터 생성을 요청한다. 
@@ -10,17 +10,25 @@ import {MOVIE_API_KEY, MOVIE_API_BASE_URL, MOVIE_API_BASE_PARAM} from '../consta
 
 // action type 명령어
 export const FETCH_ALL_TRENDING = 'FETCH_ALL_TRENDING';
-export const FETCH_NETFLIX_ORIGINALS = 'FETCH_NETFLIX_ORIGINALS';
+
+// Tv show
+export const FETCH_TV_AIRING = 'FETCH_TV_AIRING';
+export const FETCH_TV_POPULAR = 'FETCH_TV_POPULAR';
+export const FETCH_TV_KOREA = 'FETCH_TV_KOREA';
+
+// Movie
+export const FETCH_MOVIE_SCREEN = 'FETCH_MOVIE_SCREEN';
 export const FETCH_MOVIE_TOP_RATED = 'FETCH_MOVIE_TOP_RATED';
-export const FETCH_TV_TOP_RATED = 'FETCH_TV_TOP_RATED';
-export const FETCH_ACTION_MOVIES = 'FETCH_ACTION_MOVIES';
 export const FETCH_COMEDY_MOVIES = 'FETCH_COMEDY_MOVIES';
 export const FETCH_HORROR_MOVIES = 'FETCH_HORROR_MOVIES';
+
+// Detail
+export const GET_DETAIL_INFO = 'GET_DETAIL_INFO';
+
+export const FETCH_ACTION_MOVIES = 'FETCH_ACTION_MOVIES';
 export const FETCH_ROMANCE_MOVIES = 'FETCH_ROMANCE_MOVIES';
 export const FETCH_DOCUMENTARIES = 'FETCH_DOCUMENTARIES';
-export const FETCH_TV_KOREA = 'FETCH_TV_KOREA';
 export const FETCH_MOVIE_KOREA = 'FETCH_MOVIE_KOREA';
-
 
 /* action creators 메서드*/
 export const fetchTrendData = (data) => {
@@ -33,8 +41,10 @@ export const fetchTrendData = (data) => {
 // dispatch() 메서드를 파라미터로 받는 함수를 만들고, 
 // 응답이 온 후 dispatch()메서드를 호출하면 정상적으로 비동기 통신을 적용할 수 있다.
 export const fetchTrending = () => {
+  // console.log('fetchTrending')
+
   return (dispatch) => {
-      return axios.get(`${MOVIE_API_BASE_URL}/trending/all/week?api_key=${MOVIE_API_KEY}${MOVIE_API_BASE_PARAM}`)
+      return axios.get(`${MOVIE_API_BASE_URL}/trending/all/day?api_key=${MOVIE_API_KEY}${MOVIE_API_BASE_PARAM}`)
           .then(response => {
               dispatch(fetchTrendData(response.data))
           })
@@ -44,24 +54,44 @@ export const fetchTrending = () => {
   }
 }
 
-export const fetchNetflixData = (data) => {
+export const fetchTvAiringData = (data) => {
   return {
-      type: FETCH_NETFLIX_ORIGINALS,
+      type: FETCH_TV_AIRING,
       data
   }
 }
 
-export function fetchNetflixOriginals() {
+export function fetchTvAiring() {
   return (dispatch) => {
-    return axios.get(`${MOVIE_API_BASE_URL}/discover/tv?api_key=${MOVIE_API_KEY}${MOVIE_API_BASE_PARAM}`)
+    return axios.get(`${MOVIE_API_BASE_URL}/tv/on_the_air?api_key=${MOVIE_API_KEY}${MOVIE_API_BASE_PARAM}`)
       .then(response => {
-        dispatch(fetchNetflixData(response.data))
+        dispatch(fetchTvAiringData(response.data))
       })
       .catch(error => {
           throw(error);
       })
   }
-}export const fetchMovieTopData = (data) => {
+}
+export const fetchMovieScreenData = (data) => {
+  return {
+      type: FETCH_MOVIE_SCREEN,
+      data
+  }
+}
+
+export function fetchMovieScreen() {
+  return (dispatch) => {
+    return axios.get(`${MOVIE_API_BASE_URL}/movie/now_playing?api_key=${MOVIE_API_KEY}${MOVIE_API_BASE_PARAM}`)
+      .then(response => {
+        dispatch(fetchMovieScreenData(response.data))
+      })
+      .catch(error => {
+          throw(error);
+      })
+  }
+}
+
+export const fetchMovieTopData = (data) => {
   return {
       type: FETCH_MOVIE_TOP_RATED,
       data
@@ -79,18 +109,18 @@ export function fetchMovieTopRated() {
       })
   }
 }
-export const fetchTvTopData = (data) => {
+export const fetchTvPopularData = (data) => {
   return {
-      type: FETCH_TV_TOP_RATED,
+      type: FETCH_TV_POPULAR,
       data
   }
 }
 
-export function fetchTvTopRated() {
+export function fetchTvPopular() {
   return (dispatch) => {
-    return axios.get(`${MOVIE_API_BASE_URL}/tv/top_rated?api_key=${MOVIE_API_KEY}${MOVIE_API_BASE_PARAM}`)
+    return axios.get(`${MOVIE_API_BASE_URL}/tv/popular?api_key=${MOVIE_API_KEY}${MOVIE_API_BASE_PARAM}`)
       .then(response => {
-        dispatch(fetchTvTopData(response.data))
+        dispatch(fetchTvPopularData(response.data))
       })
       .catch(error => {
           throw(error);
@@ -225,6 +255,69 @@ export function fetchTvMoive() {
       })
       .catch(error => {
         throw(error);
+      })
+  }
+}
+
+export const getDetailInfoData = (data) =>{
+  return{
+    type :GET_DETAIL_INFO,
+    data
+  }
+}
+
+export function getDetailInfo(type, id) {
+  let url = `${MOVIE_API_BASE_URL}`;
+  switch (id) {
+    case "tv":
+      url += `/${type}/${tv_detail_id}`;
+      break;
+    case "movie":
+      url += `/${type}/${movie_detail_id}`;
+      break;
+    default:
+      url += `/tv/${tv_detail_id}`;
+      break;
+  }
+  url += `?api_key=${MOVIE_API_KEY}${MOVIE_API_BASE_PARAM}`;
+  // console.log('getDetailInfo ::',url);
+  
+  return (dispatch) =>{
+    return axios.get(url)
+    .then(response => {
+      dispatch(getDetailInfoData(response.data))
+    })
+    .catch(error => {
+      throw(error);
+    })
+  }
+}
+
+// back-end action
+// action type 명령어
+export const GET_HISTORY_LIST = 'GET_HISTORY_LIST';
+
+// action creators 메서드
+export const getHistoryListData = (data) =>{
+    return {
+        type : GET_HISTORY_LIST,
+        data
+    }
+}
+
+export const getHistoryList = (params) => {
+  const headers ={
+        'Content-Type': 'application/json',
+    };
+
+  return (dispatch) => {
+      return axios.post(`${BASE_URL}/history/getHistoryList`,params, headers)
+      .then(response =>{
+        // console.log('res :: ',response);
+          dispatch(getHistoryListData(response.data))
+      })
+      .catch(error =>{
+          throw(error);
       })
   }
 }
