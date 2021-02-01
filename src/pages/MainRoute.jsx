@@ -5,7 +5,7 @@ import MoviePlayer from '../components/movies/MoviePlayer';
 import MainContainer from '../containers/MainContainer';
 import MyHistoryContainer from '../containers/MyHistoryContainer';
 import HomeContainer from '../containers/home/HomeContainer';
-import MovieContainer from '../containers/movie/MovieContainer';
+import MovieContainer from '../containers/movie2/MovieContainer';
 import TvContainer from '../containers/tvshow/TvContainer';
 import LoginContainer from '../containers/LoginContainer';
 import SignUpContainer from '../containers/SignUpContainer';
