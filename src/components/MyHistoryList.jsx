@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { getHistoryList } from '../actions/index';
-import MyMovies from './movies/MyMovies';
 import Modal from './movies/Modal';
 
 const  MyHistoryList = (props) => {

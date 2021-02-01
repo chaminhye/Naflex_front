@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { FiBell, FiGift, FiSmile } from "react-icons/fi";
+// import { FiBell, FiGift, FiSmile } from "react-icons/fi";
 import { Link } from 'react-router-dom';
 import SearchInput from '../../containers/SearchInput';
 import NetflixLogo from '../../static/images/Naflex_Logo.png';

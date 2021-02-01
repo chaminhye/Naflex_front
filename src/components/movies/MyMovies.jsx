@@ -1,10 +1,9 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
+import React from 'react';
 import Modal from './Modal';
 import {getDetailInfo} from '../../actions/index';
 
 const MyMovie = (props) => {
-console.log('MyMovie :: ',props)
+// console.log('MyMovie :: ',props)
     const [modal, setModal] = useState(false);
 
     const showModal = () => {
