@@ -37,6 +37,12 @@ const Nav = (props) => {
     const currentUrl = urls.indexOf(document.location.pathname);
     
     // console.log('currentUrl',currentUrl,document.location.pathname );
+
+    const logout = () =>{
+        localStorage.removeItem('token');
+        localStorage.removeItem('userIdx');
+    }
+
     return (
         <>
             <nav className={"navigation " + (scrolling ? "black" : "" )}>
@@ -62,7 +68,7 @@ const Nav = (props) => {
                             {/* <div className="navigation_container link"><FiGift/></div>
                             <div className="navigation_container link"><FiBell/></div>
                             <div className="navigation_container link"><FiSmile/></div> */}
-                            <Link to="/" className="no--line--link "><div className="navigation_container link loginButton">로그아웃</div></Link>
+                            <Link to="/" className="no--line--link " onClick={() => logout()}><div className="navigation_container link loginButton">로그아웃</div></Link>
                             </>
                         : null}
                         {!isLogin &&
