@@ -7,5 +7,5 @@ export const movie_detail_id = `11036`
 export const tv_detail_id = `71446`
 export const home_detail_id = `432517`
 
-export const YOUTUBE_API_KEY = 'AIzaSyDDcsPdMlDGt2U3_pQfNzBPEGQwEXRhRNo';
+export const YOUTUBE_API_KEY = '';
 export const YOUTUBE_GET_SEARCH_LIST = 'https://www.googleapis.com/youtube/v3/search';
